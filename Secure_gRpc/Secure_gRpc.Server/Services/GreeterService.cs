@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Secure_gRpc
 {
-  
+    [Authorize(Policy = "protectedScope")]
     public class GreeterService : Greeter.GreeterBase
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
@@ -20,9 +20,9 @@ namespace Secure_gRpc
             _httpContextAccessor = httpContextAccessor;
         }
 
-        [Authorize(JwtBearerDefaults.AuthenticationScheme, Policy = "protectedScope")]
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            // Manual authorization as temp workaround
             var httpContext = _httpContextAccessor.HttpContext;
             var authOk = httpContext.User.HasClaim(claim => claim.Type == "scope" && claim.Value == "grpc_protected_scope");
             if (!authOk)

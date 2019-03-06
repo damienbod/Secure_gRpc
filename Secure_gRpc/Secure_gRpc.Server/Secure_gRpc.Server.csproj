@@ -19,4 +19,10 @@
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="server.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

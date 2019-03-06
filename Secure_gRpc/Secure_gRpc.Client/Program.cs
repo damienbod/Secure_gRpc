@@ -21,8 +21,8 @@ namespace Secure_gRpc
             /// 
             HttpClient httpClient = new HttpClient();
             ApiService apiService = new ApiService(httpClient);
-            var token = await apiService.GetAccessTokenAsync();
-            //var token = "This is invalid, I hope it fails";
+            //var token = await apiService.GetAccessTokenAsync();
+            var token = "This is invalid, I hope it fails";
 
             var tokenValue = "Bearer " + token;
             var metadata = new Metadata
@@ -31,12 +31,20 @@ namespace Secure_gRpc
             };
 
             ///
-            /// Call gRPC method 1
+            /// Call gRPC method 1 HTTPS
             ///
+            var channelCredentials =  new SslCredentials(
+                File.ReadAllText("Certs\\ca.crt"),
+                    new KeyCertificatePair(
+                        File.ReadAllText("Certs\\client.crt"),
+                        File.ReadAllText("Certs\\client.key")
+                    )
+                );
+
             CallOptions callOptions = new CallOptions(metadata);
             // Include port of the gRPC server as an application argument
             var port = args.Length > 0 ? args[0] : "50051";
-            var channel = new Channel("localhost:" + port, ChannelCredentials.Insecure);
+            var channel = new Channel("localhost:" + port, channelCredentials);
             var client = new Greeter.GreeterClient(channel);
 
             var reply = await client.SayHelloAsync(

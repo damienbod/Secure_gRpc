@@ -56,12 +56,13 @@ namespace Secure_gRpc
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseAuthentication();
-
             app.UseRouting(routes =>
             {
                 routes.MapGrpcService<GreeterService>();
             });
+
+            app.UseAuthentication();
+            app.UseAuthorization();
         }
     }
 }

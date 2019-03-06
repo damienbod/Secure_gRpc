@@ -22,4 +22,16 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="3.0.0-preview3.19153.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Certs\ca.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\client.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\client.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
