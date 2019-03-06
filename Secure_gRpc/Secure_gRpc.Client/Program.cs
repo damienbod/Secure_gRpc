@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
@@ -18,15 +19,18 @@ namespace Secure_gRpc
             var channel = new Channel("localhost:" + port, ChannelCredentials.Insecure);
             var client = new Greeter.GreeterClient(channel);
 
-            var tokenValue = "Bearer " + "token";
+            // Token init
+            HttpClient httpClient = new HttpClient();
+            ApiService apiService = new ApiService(httpClient);
+            var token = await apiService.GetAccessTokenAsync();
+            var tokenValue = "Bearer " + token;
             var metadata = new Metadata
             {
                 { "Authorization", tokenValue }
             };
 
             CallOptions callOptions = new CallOptions(metadata);
-        
-  
+
             var reply = await client.SayHelloAsync(
                 new HelloRequest { Name = "GreeterClient" }, callOptions);
 
