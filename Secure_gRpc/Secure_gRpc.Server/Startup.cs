@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IdentityModel.Tokens.Jwt;
+using IdentityServer4.AccessTokenValidation;
 
 namespace Secure_gRpc
 {
@@ -15,11 +17,23 @@ namespace Secure_gRpc
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+              .AddIdentityServerAuthentication(options =>
+              {
+                  options.Authority = "https://localhost:44352";
+                  options.ApiName = "ProtectedGrpc";
+                  options.ApiSecret = "grpc_protected_secret";
+                  options.RequireHttpsMetadata = false;
+              });
+
+            services.AddAuthorization(options =>
+                options.AddPolicy("protectedScope", policy =>
+                {
+                    policy.RequireClaim("scope", "grpc_protected_scope");
+                })
+            );
+
             services.AddGrpc();
-
-            services.AddMvc()
-                .AddNewtonsoftJson();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,10 +44,11 @@ namespace Secure_gRpc
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
+
             app.UseRouting(routes =>
             {
                 routes.MapGrpcService<GreeterService>();
-                routes.MapRazorPages();
             });
         }
     }

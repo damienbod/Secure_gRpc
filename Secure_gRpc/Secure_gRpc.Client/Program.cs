@@ -18,7 +18,18 @@ namespace Secure_gRpc
             var channel = new Channel("localhost:" + port, ChannelCredentials.Insecure);
             var client = new Greeter.GreeterClient(channel);
 
-            var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
+            var tokenValue = "Bearer " + "token";
+            var metadata = new Metadata
+            {
+                { "Authorization", tokenValue }
+            };
+
+            CallOptions callOptions = new CallOptions(metadata);
+        
+  
+            var reply = await client.SayHelloAsync(
+                new HelloRequest { Name = "GreeterClient" }, callOptions);
+
             Console.WriteLine("Greeting: " + reply.Message);
 
             await channel.ShutdownAsync();

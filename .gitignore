@@ -3,3 +3,6 @@
 /Secure_gRpc/Secure_gRpc.Client/obj
 /Secure_gRpc/Secure_gRpc.Server/bin
 /Secure_gRpc/Secure_gRpc.Server/obj
+/Secure_gRpc/StsServer/node_modules
+/Secure_gRpc/StsServer/obj
+/Secure_gRpc/StsServer/bin

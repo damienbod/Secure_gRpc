@@ -1,0 +1,98 @@
+2019-03-06 17:31:24.783 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-06 17:31:25.691 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-06 17:31:25.743 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-06 17:31:25.787 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-06 17:31:27.825 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-06 17:31:27.825 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-06 17:31:27.825 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-06 17:31:27.924 +01:00 [INF] Request finished in 94.3892ms 200 
+2019-03-06 17:31:28.318 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-06 17:31:28.451 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-06 17:31:28.859 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-06 17:31:28.924 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.5420000000000003ms.
+2019-03-06 17:31:29.576 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 17:31:29.650 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-06 17:31:30.009 +01:00 [INF] Request finished in 2191.6411ms 200 application/json; charset=UTF-8
+2019-03-06 17:31:30.075 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-06 17:31:30.078 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-06 17:31:30.293 +01:00 [INF] Request finished in 217.7007ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-06 17:31:30.358 +01:00 [INF] Executed ViewResult - view Index executed in 1383.7418ms.
+2019-03-06 17:31:30.360 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 1908.0669ms
+2019-03-06 17:31:30.360 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-06 17:31:30.372 +01:00 [INF] Request finished in 2554.996ms 200 text/html; charset=utf-8
+2019-03-06 17:31:30.422 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/vendor.min.css?v=Ys2tdmcpFt9_JIC5cHGffY2F4u0Qd-RaZ-yE2vb3ODE  
+2019-03-06 17:31:30.423 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/site.min.css?v=9n42HB2zuqXKDsr8sMaXB5eFvO87SuAf1CjiV4cv1Fg  
+2019-03-06 17:31:30.428 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/fontawesome-free-5.4.1-web/css/all.min.css?v=TTtNXZn5LcwfHBadsA92qh3GXV2CGSr8_wTPigGKe6E  
+2019-03-06 17:31:30.432 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+2019-03-06 17:31:30.435 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/vendor.min.js?v=G8uThHMYQhSQ7VkWu3qPj7VoSKtkq_sGJcZl_EHiZEI  
+2019-03-06 17:31:30.457 +01:00 [INF] Sending file. Request path: '/js/site.min.js'. Physical path: 'C:\git\Secure_gRpc\Secure_gRpc\StsServer\wwwroot\js\site.min.js'
+2019-03-06 17:31:30.457 +01:00 [INF] Request finished in 25.0724ms 200 application/javascript
+2019-03-06 17:31:30.505 +01:00 [INF] Sending file. Request path: '/css/site.min.css'. Physical path: 'C:\git\Secure_gRpc\Secure_gRpc\StsServer\wwwroot\css\site.min.css'
+2019-03-06 17:31:30.505 +01:00 [INF] Sending file. Request path: '/css/fontawesome-free-5.4.1-web/css/all.min.css'. Physical path: 'C:\git\Secure_gRpc\Secure_gRpc\StsServer\wwwroot\css\fontawesome-free-5.4.1-web\css\all.min.css'
+2019-03-06 17:31:30.524 +01:00 [INF] Sending file. Request path: '/css/vendor.min.css'. Physical path: 'C:\git\Secure_gRpc\Secure_gRpc\StsServer\wwwroot\css\vendor.min.css'
+2019-03-06 17:31:30.525 +01:00 [INF] Sending file. Request path: '/js/vendor.min.js'. Physical path: 'C:\git\Secure_gRpc\Secure_gRpc\StsServer\wwwroot\js\vendor.min.js'
+2019-03-06 17:31:30.558 +01:00 [INF] Request finished in 131.3715ms 200 text/css
+2019-03-06 17:31:30.558 +01:00 [INF] Request finished in 135.1902ms 200 text/css
+2019-03-06 17:31:30.558 +01:00 [INF] Request finished in 122.7946ms 200 application/javascript
+2019-03-06 17:31:30.558 +01:00 [INF] Request finished in 135.4074ms 200 text/css
+2019-03-06 17:31:30.829 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/favicon.ico  
+2019-03-06 17:31:30.831 +01:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\git\Secure_gRpc\Secure_gRpc\StsServer\wwwroot\favicon.ico'
+2019-03-06 17:31:30.834 +01:00 [INF] Request finished in 4.8644ms 200 image/x-icon
+2019-03-06 17:31:30.947 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/introspect application/x-www-form-urlencoded 100
+2019-03-06 17:31:30.953 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.IntrospectionEndpoint for /connect/introspect
+2019-03-06 17:31:31.121 +01:00 [ERR] Invalid reference token.
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Reference","ExpectedScope":null,"TokenHandle":"token","JwtId":null,"Claims":null,"$type":"TokenValidationLog"}
+2019-03-06 17:31:31.154 +01:00 [INF] Success token introspection. Token active: false, for API name: ProtectedGrpc
+2019-03-06 17:31:31.156 +01:00 [INF] Request finished in 208.4765ms 200 application/json; charset=UTF-8
+2019-03-06 17:32:32.837 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-06 17:32:33.235 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-06 17:32:33.290 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-06 17:32:33.333 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-06 17:32:34.762 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-06 17:32:34.763 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-06 17:32:34.880 +01:00 [INF] Request finished in 88.4319ms 200 
+2019-03-06 17:32:35.198 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-06 17:32:35.237 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-06 17:32:35.480 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-06 17:32:35.522 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.2642ms.
+2019-03-06 17:32:35.665 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 17:32:50.586 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-06 17:32:50.864 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-06 17:32:50.891 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-06 17:32:50.911 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-06 17:32:52.367 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-06 17:32:52.367 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-06 17:32:52.367 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-06 17:32:52.463 +01:00 [INF] Request finished in 82.5439ms 200 
+2019-03-06 17:32:52.917 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-06 17:32:52.970 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-06 17:32:53.625 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-06 17:32:53.646 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.7003000000000001ms.
+2019-03-06 17:32:53.663 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-06 17:32:53.731 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 17:32:53.966 +01:00 [INF] Request finished in 1610.8971ms 200 application/json; charset=UTF-8
+2019-03-06 17:32:54.016 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-06 17:32:54.019 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-06 17:32:54.193 +01:00 [INF] Request finished in 176.7097ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-06 17:32:54.355 +01:00 [INF] Executed ViewResult - view Index executed in 673.5841ms.
+2019-03-06 17:32:54.357 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 1386.2019ms
+2019-03-06 17:32:54.357 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-06 17:32:54.364 +01:00 [INF] Request finished in 2008.3204ms 200 text/html; charset=utf-8
+2019-03-06 17:32:54.405 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/vendor.min.js?v=G8uThHMYQhSQ7VkWu3qPj7VoSKtkq_sGJcZl_EHiZEI  
+2019-03-06 17:32:54.407 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/vendor.min.css?v=Ys2tdmcpFt9_JIC5cHGffY2F4u0Qd-RaZ-yE2vb3ODE  
+2019-03-06 17:32:54.408 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+2019-03-06 17:32:54.408 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/site.min.css?v=9n42HB2zuqXKDsr8sMaXB5eFvO87SuAf1CjiV4cv1Fg  
+2019-03-06 17:32:54.424 +01:00 [INF] The file /js/vendor.min.js was not modified
+2019-03-06 17:32:54.424 +01:00 [INF] The file /js/site.min.js was not modified
+2019-03-06 17:32:54.424 +01:00 [INF] The file /css/vendor.min.css was not modified
+2019-03-06 17:32:54.424 +01:00 [INF] The file /css/site.min.css was not modified
+2019-03-06 17:32:54.432 +01:00 [INF] Request finished in 24.6579ms 304 application/javascript
+2019-03-06 17:32:54.432 +01:00 [INF] Request finished in 26.6375ms 304 application/javascript
+2019-03-06 17:32:54.432 +01:00 [INF] Request finished in 23.3187ms 304 text/css
+2019-03-06 17:32:54.432 +01:00 [INF] Request finished in 24.7122ms 304 text/css
+2019-03-06 17:32:54.567 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/introspect application/x-www-form-urlencoded 100
+2019-03-06 17:32:54.575 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.IntrospectionEndpoint for /connect/introspect
+2019-03-06 17:32:54.790 +01:00 [ERR] Invalid reference token.
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Reference","ExpectedScope":null,"TokenHandle":"token","JwtId":null,"Claims":null,"$type":"TokenValidationLog"}
+2019-03-06 17:32:54.839 +01:00 [INF] Success token introspection. Token active: false, for API name: ProtectedGrpc
+2019-03-06 17:32:54.842 +01:00 [INF] Request finished in 275.7002ms 200 application/json; charset=UTF-8
