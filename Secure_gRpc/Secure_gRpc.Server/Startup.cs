@@ -16,6 +16,10 @@ namespace Secure_gRpc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGrpc();
+
+            services.AddMvc()
+                .AddNewtonsoftJson();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +33,7 @@ namespace Secure_gRpc
             app.UseRouting(routes =>
             {
                 routes.MapGrpcService<GreeterService>();
+                routes.MapRazorPages();
             });
         }
     }
