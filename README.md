@@ -1,4 +1,6 @@
-# Secure_gRpc
+# Security Experiments with gRPC and ASP.NET Core 3.0
+
+https://damienbod.com/2019/03/06/security-experiments-with-grpc-and-asp-net-core-3-0/
 
 ## Links:
 
