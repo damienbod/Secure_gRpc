@@ -20,9 +20,11 @@ namespace Secure_gRpc
             var client = new Greeter.GreeterClient(channel);
 
             // Token init
-            HttpClient httpClient = new HttpClient();
-            ApiService apiService = new ApiService(httpClient);
-            var token = await apiService.GetAccessTokenAsync();
+            //HttpClient httpClient = new HttpClient();
+            //ApiService apiService = new ApiService(httpClient);
+            //var token = await apiService.GetAccessTokenAsync();
+            var token = "This is invalid, I hope it fails";
+
             var tokenValue = "Bearer " + token;
             var metadata = new Metadata
             {
