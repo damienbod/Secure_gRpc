@@ -1,0 +1,5 @@
+/.vs
+/Secure_gRpc/Secure_gRpc.Client/bin
+/Secure_gRpc/Secure_gRpc.Client/obj
+/Secure_gRpc/Secure_gRpc.Server/bin
+/Secure_gRpc/Secure_gRpc.Server/obj
