@@ -27,9 +27,7 @@ namespace Secure_gRpc
             var authOk = httpContext.User.HasClaim(claim => claim.Type == "scope" && claim.Value == "grpc_protected_scope");
             if (!authOk)
             {
-                return Task.FromException<HelloReply>(
-                    new RpcException(
-                        new Status(StatusCode.Unauthenticated, "Incorrect token")));
+                // not needed if the auth middleware is working
             }
 
             return Task.FromResult(new HelloReply

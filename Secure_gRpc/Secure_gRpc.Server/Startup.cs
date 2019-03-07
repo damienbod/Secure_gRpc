@@ -58,7 +58,7 @@ namespace Secure_gRpc
 
             app.UseRouting(routes =>
             {
-                routes.MapGrpcService<GreeterService>();
+                routes.MapGrpcService<GreeterService>().RequireAuthorization("protectedScope");
             });
 
             app.UseAuthentication();
