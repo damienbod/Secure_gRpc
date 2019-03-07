@@ -1,0 +1,205 @@
+2019-03-07 07:36:27.264 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-07 07:36:27.450 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-07 07:36:27.465 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-07 07:36:27.478 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-07 07:36:28.311 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-07 07:36:28.311 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-07 07:36:28.311 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:36:28.338 +01:00 [INF] Request finished in 26.8363ms 200 
+2019-03-07 07:36:28.527 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:36:28.563 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-07 07:36:28.853 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-07 07:36:28.864 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.85230000000000006ms.
+2019-03-07 07:36:28.866 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:36:28.924 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-07 07:36:29.037 +01:00 [INF] Request finished in 728.5775ms 200 application/json; charset=UTF-8
+2019-03-07 07:36:29.080 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:36:29.082 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:36:29.179 +01:00 [INF] Request finished in 99.5563ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:36:29.264 +01:00 [INF] Executed ViewResult - view Index executed in 385.93190000000004ms.
+2019-03-07 07:36:29.265 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 701.8852ms
+2019-03-07 07:36:29.265 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:36:29.269 +01:00 [INF] Request finished in 961.0914ms 200 text/html; charset=utf-8
+2019-03-07 07:36:29.286 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/vendor.min.css?v=Ys2tdmcpFt9_JIC5cHGffY2F4u0Qd-RaZ-yE2vb3ODE  
+2019-03-07 07:36:29.288 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/site.min.css?v=9n42HB2zuqXKDsr8sMaXB5eFvO87SuAf1CjiV4cv1Fg  
+2019-03-07 07:36:29.296 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+2019-03-07 07:36:29.311 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/vendor.min.js?v=G8uThHMYQhSQ7VkWu3qPj7VoSKtkq_sGJcZl_EHiZEI  
+2019-03-07 07:36:29.318 +01:00 [INF] The file /js/site.min.js was not modified
+2019-03-07 07:36:29.318 +01:00 [INF] The file /js/vendor.min.js was not modified
+2019-03-07 07:36:29.318 +01:00 [INF] The file /css/vendor.min.css was not modified
+2019-03-07 07:36:29.318 +01:00 [INF] The file /css/site.min.css was not modified
+2019-03-07 07:36:29.324 +01:00 [INF] Request finished in 13.2349ms 304 application/javascript
+2019-03-07 07:36:29.324 +01:00 [INF] Request finished in 37.7657ms 304 text/css
+2019-03-07 07:36:29.324 +01:00 [INF] Request finished in 35.4744ms 304 text/css
+2019-03-07 07:36:29.324 +01:00 [INF] Request finished in 27.8632ms 304 application/javascript
+2019-03-07 07:36:29.411 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/introspect application/x-www-form-urlencoded 129
+2019-03-07 07:36:29.415 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.IntrospectionEndpoint for /connect/introspect
+2019-03-07 07:36:29.526 +01:00 [ERR] Invalid reference token.
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Reference","ExpectedScope":null,"TokenHandle":"This is invalid, I hope it fails","JwtId":null,"Claims":null,"$type":"TokenValidationLog"}
+2019-03-07 07:36:29.553 +01:00 [INF] Success token introspection. Token active: false, for API name: ProtectedGrpc
+2019-03-07 07:36:29.555 +01:00 [INF] Request finished in 144.2544ms 200 application/json; charset=UTF-8
+2019-03-07 07:37:20.060 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-07 07:37:20.256 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-07 07:37:20.271 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-07 07:37:20.284 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-07 07:37:21.257 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-07 07:37:21.257 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:37:21.257 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-07 07:37:21.283 +01:00 [INF] Request finished in 26.6327ms 200 
+2019-03-07 07:37:21.481 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:37:21.693 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-07 07:37:21.828 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-07 07:37:21.837 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.607ms.
+2019-03-07 07:37:21.837 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:37:21.880 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-07 07:37:21.999 +01:00 [INF] Request finished in 744.5683ms 200 application/json; charset=UTF-8
+2019-03-07 07:37:22.153 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:37:22.154 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:37:22.253 +01:00 [INF] Request finished in 100.7926ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:37:22.294 +01:00 [INF] Executed ViewResult - view Index executed in 437.6143ms.
+2019-03-07 07:37:22.296 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 602.1737ms
+2019-03-07 07:37:22.296 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:37:22.302 +01:00 [INF] Request finished in 1047.5679ms 200 text/html; charset=utf-8
+2019-03-07 07:37:22.634 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/token application/x-www-form-urlencoded 116
+2019-03-07 07:37:22.641 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-07 07:37:22.758 +01:00 [INF] Token request validation success
+{"ClientId":"ProtectedGrpc","ClientName":"ProtectedGrpc","GrantType":"client_credentials","Scopes":"grpc_protected_scope","AuthorizationCode":null,"RefreshToken":null,"UserName":null,"AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"scope":"grpc_protected_scope","grant_type":"client_credentials","client_id":"ProtectedGrpc","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-03-07 07:37:22.879 +01:00 [INF] Request finished in 245.1261ms 200 application/json; charset=UTF-8
+2019-03-07 07:37:23.493 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:37:23.494 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:37:23.494 +01:00 [INF] Request finished in 1.3483ms 200 application/json; charset=UTF-8
+2019-03-07 07:37:23.645 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:37:23.646 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:37:23.646 +01:00 [INF] Request finished in 1.085ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:39:33.210 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-07 07:39:33.399 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-07 07:39:33.414 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-07 07:39:33.425 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-07 07:39:34.213 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-07 07:39:34.213 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-07 07:39:34.213 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:39:34.256 +01:00 [INF] Request finished in 33.3876ms 200 
+2019-03-07 07:39:34.475 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:39:34.519 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-07 07:39:34.812 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-07 07:39:34.831 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.599ms.
+2019-03-07 07:39:34.846 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:39:34.898 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-07 07:39:35.047 +01:00 [INF] Request finished in 836.9062ms 200 application/json; charset=UTF-8
+2019-03-07 07:39:35.163 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:39:35.164 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:39:35.244 +01:00 [INF] Executed ViewResult - view Index executed in 391.577ms.
+2019-03-07 07:39:35.244 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 724.9344ms
+2019-03-07 07:39:35.245 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:39:35.245 +01:00 [INF] Request finished in 82.3524ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:39:35.250 +01:00 [INF] Request finished in 1039.3454ms 200 text/html; charset=utf-8
+2019-03-07 07:39:35.543 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/token application/x-www-form-urlencoded 116
+2019-03-07 07:39:35.558 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-07 07:39:35.666 +01:00 [INF] Token request validation success
+{"ClientId":"ProtectedGrpc","ClientName":"ProtectedGrpc","GrantType":"client_credentials","Scopes":"grpc_protected_scope","AuthorizationCode":null,"RefreshToken":null,"UserName":null,"AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"scope":"grpc_protected_scope","grant_type":"client_credentials","client_id":"ProtectedGrpc","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-03-07 07:39:35.790 +01:00 [INF] Request finished in 246.2219ms 200 application/json; charset=UTF-8
+2019-03-07 07:39:36.377 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:39:36.378 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:39:36.378 +01:00 [INF] Request finished in 1.135ms 200 application/json; charset=UTF-8
+2019-03-07 07:39:36.524 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:39:36.525 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:39:36.525 +01:00 [INF] Request finished in 1.0884ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:50:37.426 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-07 07:50:37.677 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-07 07:50:37.690 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-07 07:50:37.701 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-07 07:50:38.354 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-07 07:50:38.354 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-07 07:50:38.354 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:50:38.392 +01:00 [INF] Request finished in 29.9224ms 200 
+2019-03-07 07:50:38.569 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:50:38.609 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-07 07:50:38.912 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-07 07:50:38.927 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8232ms.
+2019-03-07 07:50:38.936 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:50:38.970 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-07 07:50:39.086 +01:00 [INF] Request finished in 733.9594ms 200 application/json; charset=UTF-8
+2019-03-07 07:50:39.280 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:50:39.282 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:50:39.361 +01:00 [INF] Request finished in 80.3941ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:50:39.462 +01:00 [INF] Executed ViewResult - view Index executed in 512.77740000000006ms.
+2019-03-07 07:50:39.463 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 853.23880000000008ms
+2019-03-07 07:50:39.463 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:50:39.466 +01:00 [INF] Request finished in 1114.9575ms 200 text/html; charset=utf-8
+2019-03-07 07:50:39.674 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/token application/x-www-form-urlencoded 116
+2019-03-07 07:50:39.682 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-07 07:50:39.787 +01:00 [INF] Token request validation success
+{"ClientId":"ProtectedGrpc","ClientName":"ProtectedGrpc","GrantType":"client_credentials","Scopes":"grpc_protected_scope","AuthorizationCode":null,"RefreshToken":null,"UserName":null,"AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"scope":"grpc_protected_scope","grant_type":"client_credentials","client_id":"ProtectedGrpc","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-03-07 07:50:39.914 +01:00 [INF] Request finished in 239.8709ms 200 application/json; charset=UTF-8
+2019-03-07 07:50:40.662 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:50:40.663 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:50:40.664 +01:00 [INF] Request finished in 1.311ms 200 application/json; charset=UTF-8
+2019-03-07 07:50:40.780 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:50:40.780 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:50:40.781 +01:00 [INF] Request finished in 1.2218ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:54:43.042 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-07 07:54:43.239 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-07 07:54:43.254 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-07 07:54:43.263 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-07 07:54:44.070 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:54:44.070 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-07 07:54:44.070 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-07 07:54:44.103 +01:00 [INF] Request finished in 32.0198ms 200 
+2019-03-07 07:54:44.284 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:54:44.323 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-07 07:54:44.618 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-07 07:54:44.627 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.63750000000000007ms.
+2019-03-07 07:54:44.632 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:54:44.674 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-07 07:54:44.807 +01:00 [INF] Request finished in 739.2224ms 200 application/json; charset=UTF-8
+2019-03-07 07:54:44.945 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:54:44.947 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:54:45.011 +01:00 [INF] Request finished in 65.8336ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:54:45.057 +01:00 [INF] Executed ViewResult - view Index executed in 415.02520000000004ms.
+2019-03-07 07:54:45.058 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 734.73700000000008ms
+2019-03-07 07:54:45.058 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:54:45.062 +01:00 [INF] Request finished in 994.3117ms 200 text/html; charset=utf-8
+2019-03-07 07:54:45.289 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/token application/x-www-form-urlencoded 116
+2019-03-07 07:54:45.295 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-07 07:54:45.412 +01:00 [INF] Token request validation success
+{"ClientId":"ProtectedGrpc","ClientName":"ProtectedGrpc","GrantType":"client_credentials","Scopes":"grpc_protected_scope","AuthorizationCode":null,"RefreshToken":null,"UserName":null,"AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"scope":"grpc_protected_scope","grant_type":"client_credentials","client_id":"ProtectedGrpc","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-03-07 07:54:45.529 +01:00 [INF] Request finished in 239.5606ms 200 application/json; charset=UTF-8
+2019-03-07 07:54:46.281 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:54:46.281 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:54:46.282 +01:00 [INF] Request finished in 1.0288ms 200 application/json; charset=UTF-8
+2019-03-07 07:54:46.390 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:54:46.390 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:54:46.391 +01:00 [INF] Request finished in 1.0797ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:56:59.997 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-07 07:57:00.164 +01:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-03-07 07:57:00.176 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-07 07:57:00.184 +01:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-07 07:57:00.902 +01:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-03-07 07:57:00.902 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:57:00.902 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-03-07 07:57:00.933 +01:00 [INF] Request finished in 23.6431ms 200 
+2019-03-07 07:57:01.112 +01:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:57:01.136 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)
+2019-03-07 07:57:01.353 +01:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-03-07 07:57:01.363 +01:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7369ms.
+2019-03-07 07:57:01.371 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:57:01.398 +01:00 [INF] Executing ViewResult, running view Index.
+2019-03-07 07:57:01.491 +01:00 [INF] Request finished in 590.3003ms 200 application/json; charset=UTF-8
+2019-03-07 07:57:01.604 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:57:01.606 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:57:01.655 +01:00 [INF] Executed ViewResult - view Index executed in 280.1923ms.
+2019-03-07 07:57:01.656 +01:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 519.19ms
+2019-03-07 07:57:01.656 +01:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-03-07 07:57:01.661 +01:00 [INF] Request finished in 761.1055ms 200 text/html; charset=utf-8
+2019-03-07 07:57:01.680 +01:00 [INF] Request finished in 75.4162ms 200 application/jwk-set+json; charset=UTF-8
+2019-03-07 07:57:01.955 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/token application/x-www-form-urlencoded 116
+2019-03-07 07:57:01.964 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-03-07 07:57:02.080 +01:00 [INF] Token request validation success
+{"ClientId":"ProtectedGrpc","ClientName":"ProtectedGrpc","GrantType":"client_credentials","Scopes":"grpc_protected_scope","AuthorizationCode":null,"RefreshToken":null,"UserName":null,"AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"scope":"grpc_protected_scope","grant_type":"client_credentials","client_id":"ProtectedGrpc","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-03-07 07:57:02.189 +01:00 [INF] Request finished in 234.0444ms 200 application/json; charset=UTF-8
+2019-03-07 07:57:02.707 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-03-07 07:57:02.708 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-03-07 07:57:02.708 +01:00 [INF] Request finished in 1.3498ms 200 application/json; charset=UTF-8
+2019-03-07 07:57:02.810 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-03-07 07:57:02.811 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-03-07 07:57:02.811 +01:00 [INF] Request finished in 1.0724ms 200 application/jwk-set+json; charset=UTF-8

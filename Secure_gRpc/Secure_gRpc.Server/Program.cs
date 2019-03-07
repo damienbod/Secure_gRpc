@@ -27,7 +27,7 @@ namespace Secure_gRpc
                         options.ListenLocalhost(50051, listenOptions =>
                         {
                             listenOptions.UseHttps("server.pfx", "1111");
-                            listenOptions.Protocols = HttpProtocols.Http2;
+                            listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
                         });
                     });
                 });
