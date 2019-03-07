@@ -20,11 +20,6 @@ namespace Secure_gRpc
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy(JwtBearerDefaults.AuthenticationScheme, policy =>
-                {
-                    policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireClaim(ClaimTypes.NameIdentifier);
-                });
                 options.AddPolicy("protectedScope", policy =>
                 {
                     policy.RequireClaim("scope", "grpc_protected_scope");
@@ -63,7 +58,7 @@ namespace Secure_gRpc
 
             app.UseRouting(routes =>
             {
-                routes.MapGrpcService<GreeterService>();
+                routes.MapGrpcService<GreeterService>().RequireAuthorization("protectedScope");
                 routes.MapRazorPages();
             });
 
