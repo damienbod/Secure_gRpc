@@ -21,8 +21,8 @@ namespace Secure_gRpc
             /// 
             HttpClient httpClient = new HttpClient();
             ApiService apiService = new ApiService(httpClient);
-            //var token = await apiService.GetAccessTokenAsync();
-            var token = "This is invalid, I hope it fails";
+            var token = await apiService.GetAccessTokenAsync();
+            //var token = "This is invalid, I hope it fails";
 
             var tokenValue = "Bearer " + token;
             var metadata = new Metadata
