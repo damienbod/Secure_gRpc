@@ -31,7 +31,7 @@ namespace Secure_gRpc
             };
 
             ///
-            /// Call gRPC method 1 HTTPS
+            /// Call gRPC HTTPS
             ///
             var channelCredentials =  new SslCredentials(
                 File.ReadAllText("Certs\\ca.crt"),

@@ -41,6 +41,9 @@ namespace Secure_gRpc
             {
                 options.EnableDetailedErrors = true;
             });
+
+            services.AddMvc()
+               .AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,9 +54,12 @@ namespace Secure_gRpc
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseRouting(routes =>
             {
                 routes.MapGrpcService<GreeterService>().RequireAuthorization("protectedScope");
+                routes.MapRazorPages();
             });
 
             app.UseAuthentication();
