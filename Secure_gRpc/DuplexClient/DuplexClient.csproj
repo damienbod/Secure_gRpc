@@ -7,6 +7,9 @@
 
   <ItemGroup>
     <None Include="..\Protos\duplex.proto" Link="duplex.proto" />
+    <None Remove="@(Protobuf)" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+
   </ItemGroup>
 
   <ItemGroup>
