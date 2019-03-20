@@ -22,6 +22,7 @@ namespace DuplexClient
                 .ConfigureServices(services =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddSingleton<ApiService>();
                 });
     }
 }
