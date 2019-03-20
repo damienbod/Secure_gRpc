@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Duplex;
 using Grpc.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 
 namespace Secure_gRpc
