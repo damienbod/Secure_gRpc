@@ -47,39 +47,40 @@ namespace DuplexClient
 
             CallOptions callOptions = new CallOptions(metadata);
             var port = "50051";
-            var channel = new Channel("localhost:" + port, channelCredentials);
+     
 
+            var name = "damien";
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation($"Worker running at: {DateTime.Now}");
 
-                //var channel = new Channel("localhost:50051", credentials);
-                //var client = new Chatter.ChatterClient(channel);
+                var channel = new Channel("localhost:" + port, channelCredentials);
+                var client = new Duplex.Messaging.MessagingClient(channel);
 
-                //using (var chat = client.Chat())
-                //{
-                //    Console.WriteLine($"Connected as {name}. Send empty message to quit.");
+                using (var sendData = client.SendData())
+                {
+                    Console.WriteLine($"Connected as {name}. Send empty message to quit.");
 
-                //    // Dispatch, this could be racy
-                //    var responseTask = Task.Run(async () =>
-                //    {
-                //        while (await chat.ResponseStream.MoveNext(CancellationToken.None))
-                //        {
-                //            Console.WriteLine($"{chat.ResponseStream.Current.Name}: {chat.ResponseStream.Current.Message}");
-                //        }
-                //    });
+                    // Dispatch, this could be racy
+                    var responseTask = Task.Run(async () =>
+                    {
+                        while (await sendData.ResponseStream.MoveNext(CancellationToken.None))
+                        {
+                            Console.WriteLine($"{sendData.ResponseStream.Current.Name}: {sendData.ResponseStream.Current.Message}");
+                        }
+                    });
 
-                //    var line = Console.ReadLine();
-                //    while (!string.IsNullOrEmpty(line))
-                //    {
-                //        await chat.RequestStream.WriteAsync(new Duplex.MyMessage { Name = name, Message = line });
-                //        line = Console.ReadLine();
-                //    }
-                //    await chat.RequestStream.CompleteAsync();
-                //}
+                    var line = Console.ReadLine();
+                    while (!string.IsNullOrEmpty(line))
+                    {
+                        await sendData.RequestStream.WriteAsync(new Duplex.MyMessage { Name = name, Message = line });
+                        line = Console.ReadLine();
+                    }
+                    await sendData.RequestStream.CompleteAsync();
+                }
 
                 //Console.WriteLine("Shutting down");
-                //channel.ShutdownAsync().Wait();
+                channel.ShutdownAsync().Wait();
                 //Console.WriteLine("Press any key to exit...");
                 //Console.ReadKey();
 
