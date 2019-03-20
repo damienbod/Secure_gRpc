@@ -3,18 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <OutputType>Exe</OutputType>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <None Include="..\Protos\duplex.proto" Link="duplex.proto" />
-    <None Remove="@(Protobuf)" />
-    <Content Include="@(Protobuf)" LinkBase="" />
-
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0-preview3.19153.1" />
-
     <PackageReference Include="Grpc.Core" Version="1.19.0-pre1" />
     <PackageReference Include="Google.Protobuf" Version="3.6.1" />
 
@@ -23,6 +15,29 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="3.0.0-preview3.19153.1" />
+	
+	<PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0-preview3.19153.1" />
+	
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Certs\ca.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\client.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\client.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\Protos\duplex.proto" Link="duplex.proto" />
+    <None Remove="@(Protobuf)" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+
+
     
   </ItemGroup>
 </Project>
