@@ -7,3 +7,5 @@
 /Secure_gRpc/StsServer/obj
 /Secure_gRpc/StsServer/bin
 /Secure_gRpc/StsLogs.txt
+/Secure_gRpc/DuplexClient/obj/**/*.*
+/Secure_gRpc/DuplexClient/bin/**/*.*
