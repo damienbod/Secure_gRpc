@@ -10,7 +10,7 @@
 
 <strong>2019-03-08:</strong> Removing the IHttpContextAccessor, no longer required
 
-<strong>2019-03-07:</strong> Updated the auth security to configure this on the route,attributes are not supported in the current preview.
+<strong>2019-03-07:</strong> Updated the auth security to configure this on the route, attributes are not supported in the current preview.
 
 ## Links:
 
