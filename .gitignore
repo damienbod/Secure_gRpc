@@ -9,5 +9,5 @@
 /Secure_gRpc/StsLogs.txt
 /Secure_gRpc/DuplexClient/obj/**/*.*
 /Secure_gRpc/DuplexClient/bin/**/*.*
-/Secure_gRpc/Chatter/bin
-/Secure_gRpc/Chatter/obj
+/Secure_gRpc/DuplexClientConsole/obj
+/Secure_gRpc/DuplexClientConsole/bin

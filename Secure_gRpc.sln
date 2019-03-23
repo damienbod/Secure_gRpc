@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuplexClient", "Secure_gRpc\DuplexClient\DuplexClient.csproj", "{C45A8137-0565-4462-AF64-6B4CF83576D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chatter", "Secure_gRpc\Chatter\Chatter.csproj", "{D651BFF5-CB5B-4CFE-81FC-103723E25FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuplexClientConsole", "Secure_gRpc\DuplexClientConsole\DuplexClientConsole.csproj", "{D651BFF5-CB5B-4CFE-81FC-103723E25FED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

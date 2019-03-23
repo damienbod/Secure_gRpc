@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.IO;
 using Duplex;
 
-namespace Sample.Clients
+namespace DuplexClientConsole
 {
     class Program
     {
