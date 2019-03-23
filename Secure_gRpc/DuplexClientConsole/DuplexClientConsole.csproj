@@ -22,7 +22,7 @@
     <PackageReference Include="Grpc.Core" Version="1.19.0" />
     <PackageReference Include="Grpc.Tools" Version="1.19.0" PrivateAssets="All" />
 	
-	<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="3.0.0-preview3.19153.1" />
 	

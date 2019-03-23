@@ -59,7 +59,9 @@ namespace Secure_gRpc
             app.UseRouting(routes =>
             {
                 routes.MapGrpcService<GreeterService>().RequireAuthorization("protectedScope");
-                routes.MapGrpcService<DuplexService>();
+
+                // no security, don't know how this works yet
+                routes.MapGrpcService<DuplexService>(); // .RequireAuthorization("protectedScope");
                 routes.MapRazorPages();
             });
 
