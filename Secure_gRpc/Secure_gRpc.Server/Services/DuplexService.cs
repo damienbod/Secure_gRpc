@@ -26,7 +26,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Secure_gRpc
 {
-    [Authorize(Policy = "protectedScope")]
+    //[Authorize(Policy = "protectedScope")]
     public class DuplexService : Messaging.MessagingBase, IDisposable
     {
         private readonly ILogger _logger;
