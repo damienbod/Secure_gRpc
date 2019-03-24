@@ -20,20 +20,45 @@ namespace Secure_gRpc
 
         public async Task BroadcastMessageAsync(MyMessage message)
         {
+            List<SubscribersModel> toRemove = new List<SubscribersModel>();
             foreach (var subscriber in Subscribers)
             {
-                await SendMessageToSubscriber(subscriber, message);
+                var item = await SendMessageToSubscriber(subscriber, message);
+                if (item != null)
+                {
+                    toRemove.Add(item);
+                };
+            }
+
+            foreach (var subscriber in toRemove)
+            {
+                RemoveSubscriber(subscriber);
             }
         }
 
-        private async Task SendMessageToSubscriber(SubscribersModel subscriber, MyMessage message)
+        private async Task<SubscribersModel> SendMessageToSubscriber(SubscribersModel subscriber, MyMessage message)
         {
             try
             {
                 _logger.LogInformation($"Broadcasting: {message.Name} - {message.Message}");
                 await subscriber.Subscriber.WriteAsync(message);
+                return null;
             }
             catch(Exception ex)
+            {
+                _logger.LogError(ex, "Could not send");
+                return subscriber;
+            }
+        }
+
+        private void RemoveSubscriber(SubscribersModel subscriber)
+        {
+            try
+            {
+                Subscribers.Remove(subscriber);
+                _logger.LogInformation($"Force Remove: {subscriber.Name} - no longer works");
+            }
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Could not send");
             }
