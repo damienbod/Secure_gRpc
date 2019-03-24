@@ -9,16 +9,17 @@ namespace Secure_gRpc.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly DuplexService _duplexService;
+        private readonly ServerGrpcSubscribers _serverGrpcSubscribers;
 
-        public IndexModel(DuplexService duplexService)
+        public IndexModel(ServerGrpcSubscribers serverGrpcSubscribers)
         {
-            _duplexService = duplexService;
+            _serverGrpcSubscribers = serverGrpcSubscribers;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-            
+            await _serverGrpcSubscribers.BroadcastMessageAsync(
+                new Duplex.MyMessage { Message = "Hi from server", Name ="Server" });
         }
     }
 }
