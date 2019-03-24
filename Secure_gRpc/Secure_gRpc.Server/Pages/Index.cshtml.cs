@@ -16,10 +16,15 @@ namespace Secure_gRpc.Pages
             _serverGrpcSubscribers = serverGrpcSubscribers;
         }
 
-        public async Task OnGetAsync()
+        public void OnGet()
+        {
+
+        }
+
+        public async Task OnPostAsync(string message)
         {
             await _serverGrpcSubscribers.BroadcastMessageAsync(
-                new Duplex.MyMessage { Message = "Hi from server", Name ="Server" });
+              new Duplex.MyMessage { Message = message, Name = "Server" });
         }
     }
 }
