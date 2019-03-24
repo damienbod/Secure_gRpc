@@ -50,6 +50,8 @@ namespace Secure_gRpc
             var reply = await client.SayHelloAsync(
                 new HelloRequest { Name = "GreeterClient" }, callOptions);
 
+        
+
             Console.WriteLine("Greeting: " + reply.Message);
 
             await channel.ShutdownAsync();

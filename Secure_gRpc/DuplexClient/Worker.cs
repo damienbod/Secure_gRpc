@@ -49,7 +49,7 @@ namespace DuplexClient
             var port = "50051";
      
 
-            var name = "damien";
+            var name = "worker_client";
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation($"Worker running at: {DateTime.Now}");
@@ -57,7 +57,7 @@ namespace DuplexClient
                 var channel = new Channel("localhost:" + port, channelCredentials);
                 var client = new Duplex.Messaging.MessagingClient(channel);
 
-                using (var sendData = client.SendData())
+                using (var sendData = client.SendData(metadata))
                 {
                     Console.WriteLine($"Connected as {name}. Send empty message to quit.");
 

@@ -53,26 +53,26 @@ namespace DuplexClientConsole
             var channel = new Channel("localhost:" + port, channelCredentials);
             var client = new Messaging.MessagingClient(channel);
 
-            using (var chat = client.SendData())
+            using (var duplex = client.SendData(metadata))
             {
                 Console.WriteLine($"Connected as {name}. Send empty message to quit.");
 
                 // Dispatch, this could be racy
                 var responseTask = Task.Run(async () =>
                 {
-                    while (await chat.ResponseStream.MoveNext(CancellationToken.None))
+                    while (await duplex.ResponseStream.MoveNext(CancellationToken.None))
                     {
-                        Console.WriteLine($"{chat.ResponseStream.Current.Name}: {chat.ResponseStream.Current.Message}");
+                        Console.WriteLine($"{duplex.ResponseStream.Current.Name}: {duplex.ResponseStream.Current.Message}");
                     }
                 });
 
                 var line = Console.ReadLine();
                 while (!string.IsNullOrEmpty(line))
                 {
-                    await chat.RequestStream.WriteAsync(new MyMessage { Name = name, Message = line });
+                    await duplex.RequestStream.WriteAsync(new MyMessage { Name = name, Message = line });
                     line = Console.ReadLine();
                 }
-                await chat.RequestStream.CompleteAsync();
+                await duplex.RequestStream.CompleteAsync();
             }
 
             Console.WriteLine("Shutting down");

@@ -15,7 +15,6 @@
 // limitations under the License.
 
 #endregion
-
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -26,8 +25,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Secure_gRpc
 {
-    // no security, don't know how this works yet
-    //[Authorize(Policy = "protectedScope")]
+    [Authorize(Policy = "protectedScope")]
     public class DuplexService : Messaging.MessagingBase, IDisposable
     {
         private readonly ILogger _logger;
