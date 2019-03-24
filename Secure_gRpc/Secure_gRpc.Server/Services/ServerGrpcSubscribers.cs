@@ -1,9 +1,7 @@
 ﻿using Duplex;
-using Grpc.Core;
 using Microsoft.Extensions.Logging;
-using System;
+using Secure_gRpc.Server;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Secure_gRpc
@@ -12,19 +10,19 @@ namespace Secure_gRpc
     public class ServerGrpcSubscribers
     {
         private readonly ILogger _logger;
+        public HashSet<SubscribersModel> Subscribers = new HashSet<SubscribersModel>();
+
         public ServerGrpcSubscribers(ILoggerFactory loggerFactory)
         {
             _logger = loggerFactory.CreateLogger<ServerGrpcSubscribers>();
         }
 
-        public HashSet<IServerStreamWriter<MyMessage>> _subscribers = new HashSet<IServerStreamWriter<MyMessage>>();
-
         public async Task BroadcastMessageAsync(MyMessage message)
         {
-            foreach (var subscriber in _subscribers)
+            foreach (var subscriber in Subscribers)
             {
                 _logger.LogInformation($"Broadcasting: {message.Name} - {message.Message}");
-                await subscriber.WriteAsync(message);
+                await subscriber.Subscriber.WriteAsync(message);
             }
         }
     }

@@ -22,6 +22,7 @@ using Duplex;
 using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
+using Secure_gRpc.Server;
 
 namespace Secure_gRpc
 {
@@ -49,18 +50,21 @@ namespace Secure_gRpc
             }
 
             var user = requestStream.Current.Name;
-
-            // Warning, the following is very racy but good enough for a proof of concept
-            // Register subscriber
             _logger.LogInformation($"{user} connected");
-            _serverGrpcSubscribers._subscribers.Add(responseStream);
+            var subscriber = new SubscribersModel
+            {
+                Subscriber = responseStream,
+                Name = user
+            };
+
+            _serverGrpcSubscribers.Subscribers.Add(subscriber);
 
             do
             {
                 await _serverGrpcSubscribers.BroadcastMessageAsync(requestStream.Current);
             } while (await requestStream.MoveNext());
 
-            _serverGrpcSubscribers._subscribers.Remove(responseStream);
+            _serverGrpcSubscribers.Subscribers.Remove(subscriber);
             _logger.LogInformation($"{user} disconnected");
         }
 
