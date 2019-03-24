@@ -9,9 +9,16 @@ namespace Secure_gRpc.Pages
 {
     public class IndexModel : PageModel
     {
+        private readonly DuplexService _duplexService;
+
+        public IndexModel(DuplexService duplexService)
+        {
+            _duplexService = duplexService;
+        }
+
         public void OnGet()
         {
-
+            
         }
     }
 }

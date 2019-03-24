@@ -29,13 +29,13 @@ namespace Secure_gRpc
     public class DuplexService : Messaging.MessagingBase, IDisposable
     {
         private readonly ILogger _logger;
+        private readonly ServerGrpcSubscribers _serverGrpcSubscribers;
 
-        public DuplexService(ILoggerFactory loggerFactory)
+        public DuplexService(ILoggerFactory loggerFactory, ServerGrpcSubscribers serverGrpcSubscribers)
         {
             _logger = loggerFactory.CreateLogger<DuplexService>();
+            _serverGrpcSubscribers = serverGrpcSubscribers;
         }
-
-        private static HashSet<IServerStreamWriter<MyMessage>> _subscribers = new HashSet<IServerStreamWriter<MyMessage>>();
 
         public override async Task SendData(IAsyncStreamReader<MyMessage> requestStream, IServerStreamWriter<MyMessage> responseStream, ServerCallContext context)
         {
@@ -53,24 +53,15 @@ namespace Secure_gRpc
             // Warning, the following is very racy but good enough for a proof of concept
             // Register subscriber
             _logger.LogInformation($"{user} connected");
-            _subscribers.Add(responseStream);
+            _serverGrpcSubscribers._subscribers.Add(responseStream);
 
             do
             {
-                await BroadcastMessageAsync(requestStream.Current, _logger);
+                await _serverGrpcSubscribers.BroadcastMessageAsync(requestStream.Current);
             } while (await requestStream.MoveNext());
 
-            _subscribers.Remove(responseStream);
+            _serverGrpcSubscribers._subscribers.Remove(responseStream);
             _logger.LogInformation($"{user} disconnected");
-        }
-
-        private static async Task BroadcastMessageAsync(MyMessage message, ILogger logger)
-        {
-            foreach (var subscriber in _subscribers)
-            {
-                logger.LogInformation($"Broadcasting: {message.Name} - {message.Message}");
-                await subscriber.WriteAsync(message);
-            }
         }
 
         public void Dispose()

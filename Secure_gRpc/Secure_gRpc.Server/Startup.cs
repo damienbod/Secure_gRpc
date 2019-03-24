@@ -18,6 +18,8 @@ namespace Secure_gRpc
         {
             services.AddHttpContextAccessor();
 
+            services.AddSingleton<ServerGrpcSubscribers>();
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("protectedScope", policy =>
