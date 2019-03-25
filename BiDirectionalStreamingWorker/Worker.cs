@@ -45,9 +45,7 @@ namespace BiDirectionalStreamingWorker
                     )
                 );
 
-            CallOptions callOptions = new CallOptions(metadata);
             var port = "50051";
-     
 
             var name = "worker_client";
             while (!stoppingToken.IsCancellationRequested)

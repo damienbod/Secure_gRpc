@@ -44,7 +44,6 @@ namespace BiDirectionalStreamingConsole
                     )
                 );
 
-            CallOptions callOptions = new CallOptions(metadata);
             var port = "50051";
 
             var channel = new Channel("localhost:" + port, channelCredentials);
