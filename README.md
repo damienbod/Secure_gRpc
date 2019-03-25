@@ -7,6 +7,8 @@
 
 ## History
 
+<strong>2019-03-25:</strong> Added secure Bi-directional streaming Hosted Service example, code clean up
+
 <strong>2019-03-08:</strong> Added Razor Pages to gRPC server
 
 <strong>2019-03-08:</strong> Removing the IHttpContextAccessor, no longer required
