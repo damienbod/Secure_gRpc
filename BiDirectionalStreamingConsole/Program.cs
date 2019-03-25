@@ -2,8 +2,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Grpc.Core;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.IO;
 using Duplex;
@@ -14,13 +12,12 @@ namespace BiDirectionalStreamingConsole
     {
         static async Task<int> Main(string[] args)
         {
+            var name = "BiDirectionalStreaming";
             if (args.Length != 1)
             {
-                Console.WriteLine("No name provided. Usage: dotnet run <name>.");
-                return 1;
+                Console.WriteLine("No name provided. Using <BiDirectionalStreaming>");
+                name = args[0];
             }
-
-            var name = args[0];
 
             ///
             /// Token init
