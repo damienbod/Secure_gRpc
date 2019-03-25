@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Server
 {
     public class Program
     {

@@ -1,7 +1,7 @@
 ﻿using Duplex;
 using Grpc.Core;
 
-namespace Secure_gRpc.Server
+namespace SecureGrpc.Server
 {
     public class SubscribersModel
     {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Secure_gRpc.Pages
+namespace SecureGrpc.Server.Pages
 {
     public class IndexModel : PageModel
     {

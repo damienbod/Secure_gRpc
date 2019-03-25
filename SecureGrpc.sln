@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28714.193
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7225BCFB-C0AB-42F2-BCD9-2AA743B0873A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StsServerIdentity", "SecureTokenService\StsServerIdentity.csproj", "{55497947-A569-4F9C-8D3B-A85745A2956D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureGrpc.Server", "SecureGrpc.Server\SecureGrpc.Server.csproj", "{F818C935-F1AD-40F7-8841-55144F2614B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureGrpc.Client", "SecureGrpc.Client\SecureGrpc.Client.csproj", "{009C5DC8-B728-463F-A572-658F4ABDD863}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiDirectionalStreamingConsole", "BiDirectionalStreamingConsole\BiDirectionalStreamingConsole.csproj", "{D5C78F37-2BC1-4ABA-88BE-C66ED876BB8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiDirectionalStreamingWorker", "BiDirectionalStreamingWorker\BiDirectionalStreamingWorker.csproj", "{C967A67A-69C8-4996-A344-8307F42A3CB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55497947-A569-4F9C-8D3B-A85745A2956D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55497947-A569-4F9C-8D3B-A85745A2956D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55497947-A569-4F9C-8D3B-A85745A2956D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55497947-A569-4F9C-8D3B-A85745A2956D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F818C935-F1AD-40F7-8841-55144F2614B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F818C935-F1AD-40F7-8841-55144F2614B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F818C935-F1AD-40F7-8841-55144F2614B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F818C935-F1AD-40F7-8841-55144F2614B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{009C5DC8-B728-463F-A572-658F4ABDD863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009C5DC8-B728-463F-A572-658F4ABDD863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009C5DC8-B728-463F-A572-658F4ABDD863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009C5DC8-B728-463F-A572-658F4ABDD863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C78F37-2BC1-4ABA-88BE-C66ED876BB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C78F37-2BC1-4ABA-88BE-C66ED876BB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C78F37-2BC1-4ABA-88BE-C66ED876BB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C78F37-2BC1-4ABA-88BE-C66ED876BB8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C967A67A-69C8-4996-A344-8307F42A3CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C967A67A-69C8-4996-A344-8307F42A3CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C967A67A-69C8-4996-A344-8307F42A3CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C967A67A-69C8-4996-A344-8307F42A3CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B7BB400-560F-4460-A88C-E39DD41A71FC}
+	EndGlobalSection
+EndGlobal

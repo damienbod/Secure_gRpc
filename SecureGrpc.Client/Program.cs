@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Client
 {
     public class Program
     {

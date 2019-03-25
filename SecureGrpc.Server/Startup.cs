@@ -6,7 +6,7 @@ using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Security.Claims;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Server
 {
     public class Startup
     {

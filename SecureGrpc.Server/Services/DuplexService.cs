@@ -22,9 +22,8 @@ using Duplex;
 using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
-using Secure_gRpc.Server;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Server
 {
     [Authorize(Policy = "protectedScope")]
     public class DuplexService : Messaging.MessagingBase, IDisposable

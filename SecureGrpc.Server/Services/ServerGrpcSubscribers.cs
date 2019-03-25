@@ -1,11 +1,10 @@
 ﻿using Duplex;
 using Microsoft.Extensions.Logging;
-using Secure_gRpc.Server;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Server
 {
    
     public class ServerGrpcSubscribers

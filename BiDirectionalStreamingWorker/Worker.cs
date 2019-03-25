@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.IO;
 
-namespace DuplexClient
+namespace BiDirectionalStreamingWorker
 {
     public class Worker : BackgroundService
     {

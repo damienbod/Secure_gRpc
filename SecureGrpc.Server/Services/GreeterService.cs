@@ -3,7 +3,7 @@ using Greet;
 using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Server
 {
     [Authorize(Policy = "protectedScope")]
     public class GreeterService : Greeter.GreeterBase
