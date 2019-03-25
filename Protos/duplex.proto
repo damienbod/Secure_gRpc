@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Duplex;
+
+service Messaging {
+
+  rpc SendData (stream MyMessage) returns (stream MyMessage) {}
+}
+
+message MyMessage {
+  string name = 1;
+  string message = 2;
+}

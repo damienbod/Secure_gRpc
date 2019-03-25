@@ -5,7 +5,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Secure_gRpc
+namespace BiDirectionalStreamingConsole
 {
     public class ApiService
     {

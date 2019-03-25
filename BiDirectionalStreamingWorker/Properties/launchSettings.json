@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "DuplexClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

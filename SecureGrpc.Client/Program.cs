@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Client
 {
     public class Program
     {
@@ -49,6 +49,8 @@ namespace Secure_gRpc
 
             var reply = await client.SayHelloAsync(
                 new HelloRequest { Name = "GreeterClient" }, callOptions);
+
+        
 
             Console.WriteLine("Greeting: " + reply.Message);
 

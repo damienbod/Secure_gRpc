@@ -6,7 +6,7 @@ using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Security.Claims;
 
-namespace Secure_gRpc
+namespace SecureGrpc.Server
 {
     public class Startup
     {
@@ -17,6 +17,8 @@ namespace Secure_gRpc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
+
+            services.AddSingleton<ServerGrpcSubscribers>();
 
             services.AddAuthorization(options =>
             {
@@ -59,6 +61,7 @@ namespace Secure_gRpc
             app.UseRouting(routes =>
             {
                 routes.MapGrpcService<GreeterService>().RequireAuthorization("protectedScope");
+                routes.MapGrpcService<DuplexService>().RequireAuthorization("protectedScope");
                 routes.MapRazorPages();
             });
 

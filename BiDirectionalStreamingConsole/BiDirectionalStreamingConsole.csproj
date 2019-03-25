@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <!-- Requirements (Note that most of these changes will be made to the msbuild targets in Grpc.Tools) -->
+    <!-- 1. Grpc.Tools msbuild files: the Google.Protobuf.Tools.targets file needs to be updated to remove Condition=" '$(DesignTimeBuild)' != 'true' "  -->
+    <!-- 2. Generator metadata: this is the target that's run during the design time build to generate the *.cs files -->
+    <!-- 3. None ItemGroup: Remove the *.proto files from None since the generator metadata for those files are ignored -->
+    <!-- 4. Content ItemGroup: Include the *.proto files in the Content ItemGroup. This isn't required if the file is included in the project directory. I'm not sure about what's going on with this requirement. -->
+    <Protobuf Include="..\Protos\duplex.proto" Link="duplex.proto" GrpcServices="Client" Generator="MSBuild:Compile" />
+    <None Remove="@(Protobuf)" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+    
+
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc.Core" Version="1.19.0" />
+    <PackageReference Include="Grpc.Tools" Version="1.19.0" PrivateAssets="All" />
+	
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.0.0-preview3.19153.1" />
+	
+	<PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0-preview3.19153.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Certs\ca.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\client.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\client.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\server.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
