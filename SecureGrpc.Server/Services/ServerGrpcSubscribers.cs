@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace SecureGrpc.Server
 {
-   
     public class ServerGrpcSubscribers
     {
         private readonly ILogger _logger;
