@@ -10,7 +10,7 @@ namespace SecureGrpc.Server
     {
         private readonly ILogger _logger;
         private readonly ConcurrentDictionary<string, SubscribersModel> Subscribers = new ConcurrentDictionary<string,SubscribersModel>();
-        private readonly ConcurrentDictionary<string, SubscribersModel> SubscribersToRemove = new ConcurrentDictionary<string, SubscribersModel>();
+        
         public ServerGrpcSubscribers(ILoggerFactory loggerFactory)
         {
             _logger = loggerFactory.CreateLogger<ServerGrpcSubscribers>();
@@ -19,11 +19,6 @@ namespace SecureGrpc.Server
         public async Task BroadcastMessageAsync(MyMessage message)
         {
             await BroadcastMessages(message);
-
-            foreach (var subscriber in SubscribersToRemove.Values)
-            {
-                RemoveSubscriber(subscriber);
-            }
         }
 
 
@@ -41,14 +36,12 @@ namespace SecureGrpc.Server
         {
             try
             {
-                SubscribersToRemove.TryRemove(subscriber.Name, out SubscribersModel itemFromRemoveList);
                 Subscribers.TryRemove(subscriber.Name, out SubscribersModel item);
                 _logger.LogInformation($"Force Remove: {item.Name} - no longer works");
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"Could not remove {subscriber.Name}");
-
             }
         }
 
@@ -59,7 +52,7 @@ namespace SecureGrpc.Server
                 var item = await SendMessageToSubscriber(subscriber, message);
                 if (item != null)
                 {
-                    bool added = SubscribersToRemove.TryAdd(item.Name, item);
+                    RemoveSubscriber(item);
                 };
             }
         }
