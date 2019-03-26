@@ -26,6 +26,32 @@ namespace SecureGrpc.Server
             }
         }
 
+
+        public void AddSubscriber(SubscribersModel subscriber)
+        {
+            bool added = Subscribers.TryAdd(subscriber.Name, subscriber);
+            _logger.LogInformation($"New subscriber added: {subscriber.Name}");
+            if (!added)
+            {
+                _logger.LogInformation($"could not add subscriber: {subscriber.Name}");
+            }
+        }
+
+        public void RemoveSubscriber(SubscribersModel subscriber)
+        {
+            try
+            {
+                SubscribersToRemove.TryRemove(subscriber.Name, out SubscribersModel itemFromRemoveList);
+                Subscribers.TryRemove(subscriber.Name, out SubscribersModel item);
+                _logger.LogInformation($"Force Remove: {item.Name} - no longer works");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Could not remove {subscriber.Name}");
+
+            }
+        }
+
         private async Task BroadcastMessages(MyMessage message)
         {
             foreach (var subscriber in Subscribers.Values)
@@ -53,29 +79,5 @@ namespace SecureGrpc.Server
             }
         }
 
-        public void AddSubscriber(SubscribersModel subscriber)
-        {
-            bool added = Subscribers.TryAdd(subscriber.Name, subscriber);
-            _logger.LogInformation($"New subscriber added: {subscriber.Name}");
-            if(!added)
-            {
-                _logger.LogInformation($"could not add subscriber: {subscriber.Name}");
-            }
-        }
-
-        public void RemoveSubscriber(SubscribersModel subscriber)
-        {
-            try
-            {
-                SubscribersToRemove.TryRemove(subscriber.Name, out SubscribersModel itemFromRemoveList);
-                Subscribers.TryRemove(subscriber.Name, out SubscribersModel item);
-                _logger.LogInformation($"Force Remove: {item.Name} - no longer works");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Could not remove {subscriber.Name}");
-                
-            }
-        }
     }
 }
