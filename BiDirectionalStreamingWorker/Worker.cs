@@ -59,10 +59,9 @@ namespace BiDirectionalStreamingWorker
                 {
                     Console.WriteLine($"Connected as {name}. Send empty message to quit.");
 
-                    // Dispatch, this could be racy
                     var responseTask = Task.Run(async () =>
                     {
-                        while (await sendData.ResponseStream.MoveNext(CancellationToken.None))
+                        while (await sendData.ResponseStream.MoveNext(stoppingToken))
                         {
                             Console.WriteLine($"{sendData.ResponseStream.Current.Name}: {sendData.ResponseStream.Current.Message}");
                         }
