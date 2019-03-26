@@ -77,12 +77,7 @@ namespace BiDirectionalStreamingWorker
                     await sendData.RequestStream.CompleteAsync();
                 }
 
-                //Console.WriteLine("Shutting down");
-                channel.ShutdownAsync().Wait();
-                //Console.WriteLine("Press any key to exit...");
-                //Console.ReadKey();
-
-
+                await channel.ShutdownAsync();
                 await Task.Delay(1000, stoppingToken);
             }
         }
