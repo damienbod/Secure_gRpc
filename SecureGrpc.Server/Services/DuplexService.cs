@@ -44,7 +44,6 @@ namespace SecureGrpc.Server
 
             if (!await requestStream.MoveNext())
             {
-                // No messages so don't register and just exit.
                 return;
             }
 
@@ -56,14 +55,14 @@ namespace SecureGrpc.Server
                 Name = user
             };
 
-            _serverGrpcSubscribers.Subscribers.Add(subscriber);
+            _serverGrpcSubscribers.AddSubscriber(subscriber);
 
             do
             {
                 await _serverGrpcSubscribers.BroadcastMessageAsync(requestStream.Current);
             } while (await requestStream.MoveNext());
 
-            _serverGrpcSubscribers.Subscribers.Remove(subscriber);
+            _serverGrpcSubscribers.RemoveSubscriber(subscriber);
             _logger.LogInformation($"{user} disconnected");
         }
 

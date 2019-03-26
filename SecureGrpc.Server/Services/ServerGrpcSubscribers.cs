@@ -1,7 +1,7 @@
 ﻿using Duplex;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Threading.Tasks;
 
 namespace SecureGrpc.Server
@@ -9,7 +9,7 @@ namespace SecureGrpc.Server
     public class ServerGrpcSubscribers
     {
         private readonly ILogger _logger;
-        public HashSet<SubscribersModel> Subscribers = new HashSet<SubscribersModel>();
+        private ConcurrentDictionary<string, SubscribersModel> Subscribers = new ConcurrentDictionary<string,SubscribersModel>();
 
         public ServerGrpcSubscribers(ILoggerFactory loggerFactory)
         {
@@ -18,8 +18,8 @@ namespace SecureGrpc.Server
 
         public async Task BroadcastMessageAsync(MyMessage message)
         {
-            List<SubscribersModel> toRemove = new List<SubscribersModel>();
-            foreach (var subscriber in Subscribers)
+            BlockingCollection<SubscribersModel> toRemove = new BlockingCollection<SubscribersModel>();
+            foreach (var subscriber in Subscribers.Values)
             {
                 var item = await SendMessageToSubscriber(subscriber, message);
                 if (item != null)
@@ -49,16 +49,26 @@ namespace SecureGrpc.Server
             }
         }
 
-        private void RemoveSubscriber(SubscribersModel subscriber)
+        public void AddSubscriber(SubscribersModel subscriber)
+        {
+            bool added = Subscribers.TryAdd(subscriber.Name, subscriber);
+            _logger.LogInformation($"New subscriber added: {subscriber.Name}");
+            if(!added)
+            {
+                _logger.LogInformation($"could not add subscriber: {subscriber.Name}");
+            }
+        }
+
+        public void RemoveSubscriber(SubscribersModel subscriber)
         {
             try
             {
-                Subscribers.Remove(subscriber);
-                _logger.LogInformation($"Force Remove: {subscriber.Name} - no longer works");
+                Subscribers.TryRemove(subscriber.Name, out SubscribersModel item);
+                _logger.LogInformation($"Force Remove: {item.Name} - no longer works");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Could not send");
+                _logger.LogError(ex, $"Could not remove {subscriber.Name}");
             }
         }
     }
