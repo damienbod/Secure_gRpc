@@ -7,7 +7,7 @@
 
 ## History
 
-<strong>2019-04-20:</strong> Updated Nuget packages, .NET Core 30 preview4 changes
+<strong>2019-04-20:</strong> Updated Nuget packages, .NET Core 3 preview4 changes
 
 <strong>2019-03-25:</strong> Added secure Bi-directional streaming Hosted Service example, code clean up
 
