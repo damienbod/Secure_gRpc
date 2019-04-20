@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using IdentityServer4.AccessTokenValidation;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Security.Claims;
 
 namespace SecureGrpc.Server
 {
@@ -57,16 +55,21 @@ namespace SecureGrpc.Server
             }
 
             app.UseStaticFiles();
+            app.UseHttpsRedirection();
 
-            app.UseRouting(routes =>
-            {
-                routes.MapGrpcService<GreeterService>().RequireAuthorization("protectedScope");
-                routes.MapGrpcService<DuplexService>().RequireAuthorization("protectedScope");
-                routes.MapRazorPages();
-            });
+            app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGrpcService<GreeterService>().RequireAuthorization("protectedScope");
+                endpoints.MapGrpcService<DuplexService>().RequireAuthorization("protectedScope");
+                endpoints.MapRazorPages();
+            });
+
         }
     }
 }
