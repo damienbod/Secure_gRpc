@@ -26,7 +26,7 @@ namespace SecureGrpc.Server
                 });
             });
 
-            services.AddAuthorizationPolicyEvaluator();
+            services.AddAuthorization();
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
