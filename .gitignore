@@ -11,3 +11,5 @@
 /SecureGrpc.Server/bin/**/*.*
 /SecureGrpc.Client/obj
 /SecureGrpc.Client/bin
+/SecureGrpc.ManagedClient/bin
+/SecureGrpc.ManagedClient/obj
