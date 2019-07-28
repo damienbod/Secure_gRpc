@@ -18,8 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiDirectionalStreamingConso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiDirectionalStreamingWorker", "BiDirectionalStreamingWorker\BiDirectionalStreamingWorker.csproj", "{C967A67A-69C8-4996-A344-8307F42A3CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureGrpc.ManagedClient", "SecureGrpc.ManagedClient\SecureGrpc.ManagedClient.csproj", "{8FB9F80E-A128-4EBE-98F8-0334E07E7E73}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +44,6 @@ Global
 		{C967A67A-69C8-4996-A344-8307F42A3CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C967A67A-69C8-4996-A344-8307F42A3CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C967A67A-69C8-4996-A344-8307F42A3CB9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FB9F80E-A128-4EBE-98F8-0334E07E7E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FB9F80E-A128-4EBE-98F8-0334E07E7E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FB9F80E-A128-4EBE-98F8-0334E07E7E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FB9F80E-A128-4EBE-98F8-0334E07E7E73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
