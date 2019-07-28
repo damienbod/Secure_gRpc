@@ -1,0 +1,39 @@
+2019-07-28 09:48:03.763 +02:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-07-28 09:48:03.947 +02:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-07-28 09:48:03.960 +02:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-28 09:48:03.970 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-07-28 09:48:04.721 +02:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44352/  0
+2019-07-28 09:48:04.721 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration  
+2019-07-28 09:48:04.721 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/  
+2019-07-28 09:48:04.745 +02:00 [INF] Request finished in 24.6288ms 200 
+2019-07-28 09:48:04.923 +02:00 [INF] Executing endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-07-28 09:48:04.956 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller StsServerIdentity.Controllers.HomeController (StsServerIdentity).
+2019-07-28 09:48:05.072 +02:00 [INF] Executing action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) - Validation state: "Valid"
+2019-07-28 09:48:05.075 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-28 09:48:05.083 +02:00 [INF] Executed action method StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.91150000000000009ms.
+2019-07-28 09:48:05.123 +02:00 [INF] Executing ViewResult, running view Index.
+2019-07-28 09:48:05.212 +02:00 [INF] Request finished in 493.8484ms 200 application/json; charset=UTF-8
+2019-07-28 09:48:05.292 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/.well-known/openid-configuration/jwks  
+2019-07-28 09:48:05.294 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-28 09:48:05.373 +02:00 [INF] Request finished in 80.9968ms 200 application/jwk-set+json; charset=UTF-8
+2019-07-28 09:48:05.522 +02:00 [INF] Executed ViewResult - view Index executed in 426.2019ms.
+2019-07-28 09:48:05.522 +02:00 [INF] Executed action StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity) in 566.2499ms
+2019-07-28 09:48:05.522 +02:00 [INF] Executed endpoint 'StsServerIdentity.Controllers.HomeController.Index (StsServerIdentity)'
+2019-07-28 09:48:05.525 +02:00 [INF] Request finished in 806.9688ms 200 text/html; charset=utf-8
+2019-07-28 09:48:05.555 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/vendor.min.css?v=Ys2tdmcpFt9_JIC5cHGffY2F4u0Qd-RaZ-yE2vb3ODE  
+2019-07-28 09:48:05.556 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/css/site.min.css?v=9n42HB2zuqXKDsr8sMaXB5eFvO87SuAf1CjiV4cv1Fg  
+2019-07-28 09:48:05.566 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/vendor.min.js?v=fU2o7grwU_-VlGi02urdutdOf4zItrve6iWt8pM8rys  
+2019-07-28 09:48:05.566 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44352/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+2019-07-28 09:48:05.583 +02:00 [INF] Sending file. Request path: '/css/site.min.css'. Physical path: 'C:\git\damienbod\Secure_gRpc\SecureTokenService\wwwroot\css\site.min.css'
+2019-07-28 09:48:05.583 +02:00 [INF] Sending file. Request path: '/js/site.min.js'. Physical path: 'C:\git\damienbod\Secure_gRpc\SecureTokenService\wwwroot\js\site.min.js'
+2019-07-28 09:48:05.584 +02:00 [INF] Request finished in 27.453ms 200 text/css
+2019-07-28 09:48:05.584 +02:00 [INF] Request finished in 17.6625ms 200 application/javascript
+2019-07-28 09:48:05.603 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:44352/connect/token application/x-www-form-urlencoded 116
+2019-07-28 09:48:05.626 +02:00 [INF] Sending file. Request path: '/js/vendor.min.js'. Physical path: 'C:\git\damienbod\Secure_gRpc\SecureTokenService\wwwroot\js\vendor.min.js'
+2019-07-28 09:48:05.636 +02:00 [INF] Sending file. Request path: '/css/vendor.min.css'. Physical path: 'C:\git\damienbod\Secure_gRpc\SecureTokenService\wwwroot\css\vendor.min.css'
+2019-07-28 09:48:05.641 +02:00 [INF] Request finished in 79.4675ms 200 application/javascript
+2019-07-28 09:48:05.641 +02:00 [INF] Request finished in 86.3088ms 200 text/css
+2019-07-28 09:48:05.643 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-28 09:48:05.800 +02:00 [INF] Token request validation success
+{"ClientId":"ProtectedGrpc","ClientName":"ProtectedGrpc","GrantType":"client_credentials","Scopes":"grpc_protected_scope","AuthorizationCode":null,"RefreshToken":null,"UserName":null,"AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"client_credentials","scope":"grpc_protected_scope","client_id":"ProtectedGrpc","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-28 09:48:05.956 +02:00 [INF] Request finished in 352.5268ms 200 application/json; charset=UTF-8
