@@ -7,6 +7,8 @@
 
 ## History
 
+<strong>2019-07-27:</strong> Updated Nuget packages, .NET Core 3 preview7
+
 <strong>2019-06-14:</strong> Updated Nuget packages, .NET Core 3 preview6 changes
 
 <strong>2019-05-07:</strong> Updated Nuget packages, .NET Core 3 preview5 changes
