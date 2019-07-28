@@ -7,13 +7,13 @@
 
 ## History
 
-<strong>2019-07-27:</strong> Updated Nuget packages, .NET Core 3 preview7
+<strong>2019-07-28:</strong> Updated Nuget packages, .NET Core 3 preview 7
 
-<strong>2019-06-14:</strong> Updated Nuget packages, .NET Core 3 preview6 changes
+<strong>2019-06-14:</strong> Updated Nuget packages, .NET Core 3 preview 6 changes
 
-<strong>2019-05-07:</strong> Updated Nuget packages, .NET Core 3 preview5 changes
+<strong>2019-05-07:</strong> Updated Nuget packages, .NET Core 3 preview 5 changes
 
-<strong>2019-04-20:</strong> Updated Nuget packages, .NET Core 3 preview4 changes
+<strong>2019-04-20:</strong> Updated Nuget packages, .NET Core 3 preview 4 changes
 
 <strong>2019-03-25:</strong> Added secure Bi-directional streaming Hosted Service example, code clean up
 
