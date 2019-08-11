@@ -24,33 +24,22 @@ using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 using StsServerIdentity.Filters;
+using Microsoft.Extensions.Hosting;
 
 namespace StsServerIdentity
 {
     public class Startup
     {
-        private readonly IHostingEnvironment _environment;
-
         private string _clientId = "xxxxxx";
         private string _clientSecret = "xxxxx";
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-
-            if (env.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>();
-            }
+            Configuration = configuration;
             _environment = env;
-
-            builder.AddEnvironmentVariables();
-            Configuration = builder.Build();
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment _environment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -98,12 +87,25 @@ namespace StsServerIdentity
             if (_clientId != null)
             {
                 services.AddAuthentication()
-                .AddMicrosoftAccount(options =>
-                {
-                    options.ClientId = _clientId;
-                    options.SignInScheme = "Identity.External";
-                    options.ClientSecret = _clientSecret;
-                });
+                 .AddOpenIdConnect("Azure AD / Microsoft", "Azure AD / Microsoft", options => // Microsoft common
+                 {
+                     //  https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
+                     options.ClientId = _clientId;
+                     options.ClientSecret = _clientSecret;
+                     options.SignInScheme = "Identity.External";
+                     options.RemoteAuthenticationTimeout = TimeSpan.FromSeconds(30);
+                     options.Authority = "https://login.microsoftonline.com/common/v2.0/";
+                     options.ResponseType = "code";
+                     options.Scope.Add("profile");
+                     options.Scope.Add("email");
+                     options.TokenValidationParameters = new TokenValidationParameters
+                     {
+                         ValidateIssuer = false,
+                         NameClaimType = "email",
+                     };
+                     options.CallbackPath = "/signin-microsoft";
+                     options.Prompt = "login"; // login, consent
+                 });
             }
             else
             {
@@ -144,7 +146,7 @@ namespace StsServerIdentity
             services.AddMvc(options =>
             {
                 options.Filters.Add(new SecurityHeadersAttribute());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddViewLocalization()
                 .AddDataAnnotationsLocalization(options =>
                 {
@@ -181,16 +183,11 @@ namespace StsServerIdentity
                 //});
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseHsts(hsts => hsts.MaxAge(365).IncludeSubdomains());
@@ -233,6 +230,7 @@ namespace StsServerIdentity
                 }
             });
             app.UseIdentityServer();
+            app.UseRouting();
 
             app.UseMvc(routes =>
             {
