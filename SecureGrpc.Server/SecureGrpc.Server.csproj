@@ -11,11 +11,11 @@
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore.Server" Version="0.1.22-pre2" />
-    <PackageReference Include="Google.Protobuf" Version="3.9.0-rc1" />
+    <PackageReference Include="Google.Protobuf" Version="3.9.1" />
 
-    <PackageReference Include="Grpc.Tools" Version="1.22.0" PrivateAssets="All" />
+    <PackageReference Include="Grpc.Tools" Version="2.23.0-pre1" PrivateAssets="All" />
 
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview7.19365.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview8.19405.7" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0-preview.2" />
   </ItemGroup>
 

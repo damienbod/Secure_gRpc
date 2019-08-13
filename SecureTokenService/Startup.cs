@@ -24,33 +24,22 @@ using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 using StsServerIdentity.Filters;
+using Microsoft.Extensions.Hosting;
 
 namespace StsServerIdentity
 {
     public class Startup
     {
-        private readonly IHostingEnvironment _environment;
-
         private string _clientId = "xxxxxx";
         private string _clientSecret = "xxxxx";
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-
-            if (env.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>();
-            }
+            Configuration = configuration;
             _environment = env;
-
-            builder.AddEnvironmentVariables();
-            Configuration = builder.Build();
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment _environment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -98,12 +87,25 @@ namespace StsServerIdentity
             if (_clientId != null)
             {
                 services.AddAuthentication()
-                .AddMicrosoftAccount(options =>
-                {
-                    options.ClientId = _clientId;
-                    options.SignInScheme = "Identity.External";
-                    options.ClientSecret = _clientSecret;
-                });
+                 .AddOpenIdConnect("Azure AD / Microsoft", "Azure AD / Microsoft", options => // Microsoft common
+                 {
+                     //  https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
+                     options.ClientId = _clientId;
+                     options.ClientSecret = _clientSecret;
+                     options.SignInScheme = "Identity.External";
+                     options.RemoteAuthenticationTimeout = TimeSpan.FromSeconds(30);
+                     options.Authority = "https://login.microsoftonline.com/common/v2.0/";
+                     options.ResponseType = "code";
+                     options.Scope.Add("profile");
+                     options.Scope.Add("email");
+                     options.TokenValidationParameters = new TokenValidationParameters
+                     {
+                         ValidateIssuer = false,
+                         NameClaimType = "email",
+                     };
+                     options.CallbackPath = "/signin-microsoft";
+                     options.Prompt = "login"; // login, consent
+                 });
             }
             else
             {
@@ -141,10 +143,11 @@ namespace StsServerIdentity
                     options.RequestCultureProviders.Insert(0, providerQuery);
                 });
 
-            services.AddMvc(options =>
-            {
-                options.Filters.Add(new SecurityHeadersAttribute());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            services.AddControllersWithViews(options =>
+                {
+                    options.Filters.Add(new SecurityHeadersAttribute());
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddViewLocalization()
                 .AddDataAnnotationsLocalization(options =>
                 {
@@ -154,6 +157,8 @@ namespace StsServerIdentity
                         return factory.Create("SharedResource", assemblyName.Name);
                     };
                 });
+
+            services.AddRazorPages();
 
             services.AddTransient<IProfileService, IdentityWithAdditionalClaimsProfileService>();
 
@@ -181,7 +186,7 @@ namespace StsServerIdentity
                 //});
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -190,10 +195,10 @@ namespace StsServerIdentity
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
+                app.UseHsts(hsts => hsts.MaxAge(365).IncludeSubdomains());
             }
 
-            app.UseHsts(hsts => hsts.MaxAge(365).IncludeSubdomains());
             app.UseXContentTypeOptions();
             app.UseReferrerPolicy(opts => opts.NoReferrer());
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
@@ -232,13 +237,20 @@ namespace StsServerIdentity
                     }
                 }
             });
+
             app.UseIdentityServer();
 
-            app.UseMvc(routes =>
+            app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
