@@ -10,24 +10,13 @@ namespace SecureGrpc.Server
     {
         private string stsServer = "https://localhost:44352";
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpContextAccessor();
-
-            services.AddSingleton<ServerGrpcSubscribers>();
-
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("protectedScope", policy =>
-                {
-                    policy.RequireClaim("scope", "grpc_protected_scope");
-                });
+                 { policy.RequireClaim("scope", "grpc_protected_scope"); });
             });
-
-            services.AddAuthorization();
-
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
@@ -44,6 +33,10 @@ namespace SecureGrpc.Server
 
             services.AddMvc()
                .AddNewtonsoftJson();
+
+            services.AddHttpContextAccessor();
+            services.AddSingleton<ServerGrpcSubscribers>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
