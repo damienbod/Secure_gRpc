@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Https;
+using System.Security.Cryptography.X509Certificates;
+using System.IO;
 
 namespace SecureGrpc.Server
 {
@@ -29,7 +27,23 @@ namespace SecureGrpc.Server
                             listenOptions.UseHttps("server.pfx", "1111");
                             listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
                         });
+                        var cert = new X509Certificate2(Path.Combine("server.pfx"), "1111");
+                        options.ConfigureHttpsDefaults(o =>
+                        {
+                            o.ServerCertificate = cert;
+                            o.ClientCertificateMode = ClientCertificateMode.RequireCertificate;
+                        });
+
                     });
+                    //.ConfigureKestrel(options =>
+                    // {
+                    //     var cert = new X509Certificate2(Path.Combine("sts_dev_cert.pfx"), "1234");
+                    //     options.ConfigureHttpsDefaults(o =>
+                    //     {
+                    //         o.ServerCertificate = cert;
+                    //         o.ClientCertificateMode = ClientCertificateMode.RequireCertificate;
+                    //     });
+                    // })
                 });
     }
 }

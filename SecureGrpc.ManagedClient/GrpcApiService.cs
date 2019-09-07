@@ -34,10 +34,10 @@ namespace SecureGrpc.ManagedClient
                 var clientCertificate = new X509Certificate2("Certs/server.pfx", "1111");
                 var handler = new HttpClientHandler();
                 handler.ClientCertificates.Add(clientCertificate);
-
-                var client = new HttpClient(handler);
-
-                client.BaseAddress = new Uri(_authConfigurations.Value.ProtectedApiUrl);
+                var client = new HttpClient(handler)
+                {
+                    BaseAddress = new Uri(_authConfigurations.Value.ProtectedApiUrl)
+                };
 
                 var access_token = await _apiTokenInMemoryClient.GetApiToken(
                     "ProtectedGrpc",
