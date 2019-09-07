@@ -27,12 +27,12 @@ namespace SecureGrpc.Server
                             listenOptions.UseHttps("server.pfx", "1111");
                             listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
                         });
-                        var cert = new X509Certificate2(Path.Combine("server.pfx"), "1111");
-                        options.ConfigureHttpsDefaults(o =>
-                        {
-                            o.ServerCertificate = cert;
-                            o.ClientCertificateMode = ClientCertificateMode.RequireCertificate;
-                        });
+                        //var cert = new X509Certificate2(Path.Combine("server.pfx"), "1111");
+                        //options.ConfigureHttpsDefaults(o =>
+                        //{
+                        //    o.ServerCertificate = cert;
+                        //    o.ClientCertificateMode = ClientCertificateMode.RequireCertificate;
+                        //});
 
                     });
                     //.ConfigureKestrel(options =>
