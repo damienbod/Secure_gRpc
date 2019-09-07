@@ -53,10 +53,11 @@ namespace SecureGrpc.ManagedClient
 
                 CallOptions callOptions = new CallOptions(metadata);
 
-                var clientGrpc = GrpcClient.Create<Greeter.GreeterClient>(client);
+                var channel = GrpcChannel.ForAddress(_authConfigurations.Value.ProtectedApiUrl);
+                var clientGrpc = new Greeter.GreeterClient(channel);
 
                 var response = await clientGrpc.SayHelloAsync(
-                new HelloRequest { Name = "GreeterClient managed" }, callOptions);
+                 new HelloRequest { Name = "GreeterClient managed" }, callOptions);
 
                 return JArray.Parse(response.Message);
                 //if (response.IsSuccessStatusCode)
