@@ -7,6 +7,8 @@
 
 ## History
 
+<strong>2019-12-16:</strong> Updated to .NET Core 3.1
+
 <strong>2019-09-14:</strong> Updated nuget packages
 
 <strong>2019-09-07:</strong> Adding a Grpc.Net.Client 
