@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,17 +10,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="3.0.0-preview9.19424.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore.Server" Version="0.2.23-pre2" />
-    <PackageReference Include="Google.Protobuf" Version="3.10.0-rc1" />
+    <PackageReference Include="Grpc.AspNetCore.Server" Version="2.25.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.11.2" />
 
-    <PackageReference Include="Grpc.Tools" Version="2.24.0-pre1" PrivateAssets="All" />
+    <PackageReference Include="Grpc.Tools" Version="2.25.0" PrivateAssets="All" />
 
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview9.19424.4" />
-    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
