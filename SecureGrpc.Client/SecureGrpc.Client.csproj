@@ -34,4 +34,27 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Certs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Certs\ca1.crt" Link="Certs\ca1.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Certs\ca1.key" Link="Certs\ca1.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Certs\client1.crt" Link="Certs\client1.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Certs\client1.csr" Link="Certs\client1.csr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Certs\client1.key" Link="Certs\client1.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Certs\Readme.md" Link="Certs\Readme.md" />
+  </ItemGroup>
+
 </Project>

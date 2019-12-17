@@ -49,7 +49,7 @@ namespace SecureGrpc.Server
                         options.Limits.MinRequestBodyDataRate = null;
                         options.ListenLocalhost(50051, listenOptions =>
                         {
-                            listenOptions.UseHttps("root_ca_dev_damienbod.pfx", "1234");
+                            listenOptions.UseHttps("server1.pfx", "1111");
                             listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
                         });
                         //var cert = new X509Certificate2(Path.Combine("server.pfx"), "1111");
