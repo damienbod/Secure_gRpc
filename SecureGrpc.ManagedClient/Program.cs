@@ -17,8 +17,8 @@ namespace SecureGrpc.ManagedClient
         public static int Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .MinimumLevel.Verbose()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
@@ -47,6 +47,8 @@ namespace SecureGrpc.ManagedClient
                   webBuilder.UseStartup<Startup>()
                       .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
                       .ReadFrom.Configuration(hostingContext.Configuration)
+                      .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
+                      .MinimumLevel.Verbose()
                       .Enrich.FromLogContext()
                       .WriteTo.File("../_ManagedClientLogs.txt")
                       .WriteTo.Console(theme: AnsiConsoleTheme.Code)

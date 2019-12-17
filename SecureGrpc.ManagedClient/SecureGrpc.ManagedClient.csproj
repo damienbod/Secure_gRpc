@@ -24,6 +24,9 @@
   </ItemGroup>
   
   <ItemGroup>
+    <None Update="Certs\client2.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Certs\server1.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

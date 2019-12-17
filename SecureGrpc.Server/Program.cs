@@ -16,8 +16,8 @@ namespace SecureGrpc.Server
         public static int Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
+                .MinimumLevel.Verbose()
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
@@ -43,14 +43,17 @@ namespace SecureGrpc.Server
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    var cert = new X509Certificate2(Path.Combine("Certs/server2.pfx"), "1111");
                     webBuilder.UseStartup<Startup>()
                     .ConfigureKestrel(options =>
                     {
                         options.Limits.MinRequestBodyDataRate = null;
                         options.ListenLocalhost(50051, listenOptions =>
                         {
-                            listenOptions.UseHttps("Certs\\server1.pfx", "1111");
+                            listenOptions.UseHttps(cert);
                             listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+                            listenOptions.UseConnectionLogging();
+
                         });
                         //var cert = new X509Certificate2(Path.Combine("server.pfx"), "1111");
                         //options.ConfigureHttpsDefaults(o =>
@@ -62,6 +65,8 @@ namespace SecureGrpc.Server
                     })
                     .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
                         .ReadFrom.Configuration(hostingContext.Configuration)
+                        .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
+                        .MinimumLevel.Verbose()
                         .Enrich.FromLogContext()
                         .WriteTo.File("../_GrpcServerLogs.txt")
                         .WriteTo.Console(theme: AnsiConsoleTheme.Code)
