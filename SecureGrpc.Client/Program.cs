@@ -34,10 +34,10 @@ namespace SecureGrpc.Client
             /// Call gRPC HTTPS
             ///
             var channelCredentials =  new SslCredentials(
-                File.ReadAllText("Certs\\ca.crt"),
+                File.ReadAllText("..\\Certs\\root_ca_dev_damienbod.crt"),
                     new KeyCertificatePair(
-                        File.ReadAllText("Certs\\client.crt"),
-                        File.ReadAllText("Certs\\client.key")
+                        File.ReadAllText("..\\Certs\\root_ca_dev_damienbod.crt"),
+                        File.ReadAllText("..\\Certs\\root_ca_dev_damienbod.key")
                     )
                 );
 
