@@ -1,6 +1,6 @@
 
 <ul>	
- <li><a href="https://damienbod.com/2019/03/06/security-experiments-with-grpc-and-asp-net-core-3-0/">Security Experiments with gRPC and ASP.NET Core 3.0</a></li>
+ <li><a href="https://damienbod.com/2019/03/06/security-experiments-with-grpc-and-asp-net-core-3-0/">Security Experiments with gRPC and ASP.NET Core 3.1</a></li>
  <li><a href="https://damienbod.com/2019/03/08/running-razor-pages-and-a-grpc-service-in-a-single-asp-net-core-application/">Running Razor Pages and a gRPC service in a single ASP.NET Core application</a></li>
  <li><a href="https://damienbod.com/2019/03/25/grpc-bi-directional-streaming-with-razor-pages-and-a-hosted-service-grpc-client/">gRPC Bi-directional streaming with Razor Pages and a Hosted Service gRPC client</a></li>
 </ul>
