@@ -40,8 +40,7 @@ namespace SecureGrpc.ManagedClient
             services.Configure<AuthConfigurations>(Configuration.GetSection("AuthConfigurations"));
             var clientCertificate = new X509Certificate2("Certs/client2.pfx", "1111");
             var handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
-            handler.CheckCertificateRevocationList = false;
+            //handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             handler.ClientCertificates.Add(clientCertificate);
 
             services.AddHttpClient("grpc", c =>
