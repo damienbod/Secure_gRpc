@@ -7,6 +7,8 @@
 
 ## History
 
+<strong>2019-12-16:</strong> Updated to .NET Core 3.1
+
 <strong>2019-09-14:</strong> Updated nuget packages
 
 <strong>2019-09-07:</strong> Adding a Grpc.Net.Client 
@@ -39,3 +41,6 @@ https://grpc.io/
 
 https://www.stevejgordon.co.uk/early-look-at-grpc-using-aspnet-core-3
 
+https://helpcenter.gsx.com/hc/en-us/articles/115015887447-Extracting-Certificate-crt-and-PrivateKey-key-from-a-Certificate-pfx-File
+
+https://stackoverflow.com/questions/37714558/how-to-enable-server-side-ssl-for-grpc

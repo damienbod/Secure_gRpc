@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using IdentityServer4.AccessTokenValidation;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Authentication.Certificate;
+using Serilog;
 
 namespace SecureGrpc.Server
 {
@@ -18,6 +21,12 @@ namespace SecureGrpc.Server
                  { policy.RequireClaim("scope", "grpc_protected_scope"); });
             });
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddCertificate(options =>
+                {
+                    // Not recommended in production environments. The example is using a self-signed test certificate.
+                    options.RevocationMode = X509RevocationMode.NoCheck;
+                    options.AllowedCertificateTypes = CertificateTypes.All;
+                })
                 .AddIdentityServerAuthentication(options =>
                 {
                     options.Authority = stsServer;
@@ -45,6 +54,10 @@ namespace SecureGrpc.Server
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // https://nblumhardt.com/2019/10/serilog-in-aspnetcore-3/
+            // https://nblumhardt.com/2019/10/serilog-mvc-logging/
+            app.UseSerilogRequestLogging();
 
             app.UseStaticFiles();
             app.UseHttpsRedirection();

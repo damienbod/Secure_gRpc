@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace SecureGrpc.ManagedClient
 {
@@ -37,8 +38,9 @@ namespace SecureGrpc.ManagedClient
             services.AddSingleton<ApiTokenInMemoryClient>();
 
             services.Configure<AuthConfigurations>(Configuration.GetSection("AuthConfigurations"));
-            var clientCertificate = new X509Certificate2("Certs/server.pfx", "1111");
+            var clientCertificate = new X509Certificate2("Certs/client2.pfx", "1111");
             var handler = new HttpClientHandler();
+            //handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             handler.ClientCertificates.Add(clientCertificate);
 
             services.AddHttpClient("grpc", c =>
@@ -63,6 +65,10 @@ namespace SecureGrpc.ManagedClient
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // https://nblumhardt.com/2019/10/serilog-in-aspnetcore-3/
+            // https://nblumhardt.com/2019/10/serilog-mvc-logging/
+            app.UseSerilogRequestLogging();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

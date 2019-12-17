@@ -6,9 +6,11 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
+using Grpc.Net.Client;
 
 namespace SecureGrpc.Client
 {
@@ -30,34 +32,32 @@ namespace SecureGrpc.Client
                 { "Authorization", tokenValue }
             };
 
-            ///
-            /// Call gRPC HTTPS
-            ///
-            var channelCredentials =  new SslCredentials(
-                File.ReadAllText("Certs\\ca.crt"),
-                    new KeyCertificatePair(
-                        File.ReadAllText("Certs\\client.crt"),
-                        File.ReadAllText("Certs\\client.key")
-                    )
-                );
+            var channel = GrpcChannel.ForAddress("https://localhost:50051", new GrpcChannelOptions
+            {
+                HttpClient = CreateHttpClient()
+            });
 
             CallOptions callOptions = new CallOptions(metadata);
-            // Include port of the gRPC server as an application argument
-            var port = args.Length > 0 ? args[0] : "50051";
-            var channel = new Channel("localhost:" + port, channelCredentials);
+
             var client = new Greeter.GreeterClient(channel);
 
             var reply = await client.SayHelloAsync(
                 new HelloRequest { Name = "GreeterClient" }, callOptions);
 
-        
-
             Console.WriteLine("Greeting: " + reply.Message);
-
-            await channel.ShutdownAsync();
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
-   }
+
+        private static HttpClient CreateHttpClient()
+        {
+            var handler = new HttpClientHandler();
+            var cert = new X509Certificate2(Path.Combine("Certs/client2.pfx"), "1111");
+            handler.ClientCertificates.Add(cert);
+
+            // Create client
+            return new HttpClient(handler);
+        }
+    }
 }
