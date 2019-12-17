@@ -10,12 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\Certs\server1.pfx" Link="server1.pfx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="3.1.0" />
   </ItemGroup>
 
@@ -35,6 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Certs\client1.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Certs\server1.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="server.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

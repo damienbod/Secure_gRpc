@@ -9,6 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
+using Grpc.Net.Client;
 
 namespace SecureGrpc.Client
 {
@@ -47,7 +48,13 @@ namespace SecureGrpc.Client
             var channel = new Channel("localhost:" + port, channelCredentials);
             var client = new Greeter.GreeterClient(channel);
 
-            var reply = await client.SayHelloAsync(
+            var grpcChannelOptions = new GrpcChannelOptions();
+            
+
+            var channel1 = GrpcChannel.ForAddress("https://localhost:50051", grpcChannelOptions);
+            var client1 = new Greeter.GreeterClient(channel);
+
+            var reply = await client1.SayHelloAsync(
                 new HelloRequest { Name = "GreeterClient" }, callOptions);
 
         

@@ -37,9 +37,9 @@ namespace SecureGrpc.ManagedClient
             services.AddSingleton<ApiTokenInMemoryClient>();
 
             services.Configure<AuthConfigurations>(Configuration.GetSection("AuthConfigurations"));
-            var clientCertificate = new X509Certificate2("../Certs/server1.pfx", "1111");
+            var clientCertificate = new X509Certificate2("Certs/client1.pfx", "1111");
             var handler = new HttpClientHandler();
-            //handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+            handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             handler.ClientCertificates.Add(clientCertificate);
 
             services.AddHttpClient("grpc", c =>
