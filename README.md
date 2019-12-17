@@ -7,7 +7,7 @@
 
 ## History
 
-<strong>2019-12-16:</strong> Updated to .NET Core 3.1
+<strong>2019-12-17:</strong> Updated to .NET Core 3.1, fixed certs
 
 <strong>2019-09-14:</strong> Updated nuget packages
 
