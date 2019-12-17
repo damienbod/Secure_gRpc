@@ -1,4 +1,7 @@
-These certs are generated via openssl according to https://stackoverflow.com/questions/377@echo off
+Install openssl and run from the cmd:
+// Change the CN as required for your domains
+
+
 set OPENSSL_CONF=c:\OpenSSL-Win64\bin\openssl.cfg   
 
 echo Generate CA key:
