@@ -5,6 +5,8 @@ using Grpc.Core;
 using System.Net.Http;
 using System.IO;
 using Duplex;
+using System.Security.Cryptography.X509Certificates;
+using Grpc.Net.Client;
 
 namespace BiDirectionalStreamingConsole
 {
@@ -33,20 +35,11 @@ namespace BiDirectionalStreamingConsole
                 { "Authorization", tokenValue }
             };
 
-            ///
-            /// Call gRPC HTTPS
-            ///
-            var channelCredentials = new SslCredentials(
-                File.ReadAllText("Certs\\ca1.crt"),
-                    new KeyCertificatePair(
-                        File.ReadAllText("Certs\\client1.crt"),
-                        File.ReadAllText("Certs\\client1.key")
-                    )
-                );
+            var channel = GrpcChannel.ForAddress("https://localhost:50051", new GrpcChannelOptions
+            {
+                HttpClient = CreateHttpClient()
+            });
 
-            var port = "50051";
-
-            var channel = new Channel("localhost:" + port, channelCredentials);
             var client = new Messaging.MessagingClient(channel);
 
             using (var duplex = client.SendData(metadata))
@@ -72,11 +65,20 @@ namespace BiDirectionalStreamingConsole
             }
 
             Console.WriteLine("Shutting down");
-            await channel.ShutdownAsync();
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
 
             return 0;
+        }
+
+        private static HttpClient CreateHttpClient()
+        {
+            var handler = new HttpClientHandler();
+            var cert = new X509Certificate2(Path.Combine("Certs/client2.pfx"), "1111");
+            handler.ClientCertificates.Add(cert);
+
+            // Create client
+            return new HttpClient(handler);
         }
     }
 }

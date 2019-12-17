@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using Grpc.Net.Client;
 
 namespace BiDirectionalStreamingWorker
 {
@@ -34,25 +36,16 @@ namespace BiDirectionalStreamingWorker
                 { "Authorization", tokenValue }
             };
 
-            ///
-            /// Call gRPC HTTPS
-            ///
-            var channelCredentials = new SslCredentials(
-                File.ReadAllText("Certs\\ca1.crt"),
-                    new KeyCertificatePair(
-                        File.ReadAllText("Certs\\client1.crt"),
-                        File.ReadAllText("Certs\\client1.key")
-                    )
-                );
-
-            var port = "50051";
+            var channel = GrpcChannel.ForAddress("https://localhost:50051", new GrpcChannelOptions
+            {
+                HttpClient = CreateHttpClient()
+            });
 
             var name = "worker_client";
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation($"Worker running at: {DateTime.Now}");
 
-                var channel = new Channel("localhost:" + port, channelCredentials);
                 var client = new Duplex.Messaging.MessagingClient(channel);
 
                 using (var sendData = client.SendData(metadata))
@@ -76,9 +69,18 @@ namespace BiDirectionalStreamingWorker
                     await sendData.RequestStream.CompleteAsync();
                 }
 
-                await channel.ShutdownAsync();
                 await Task.Delay(1000, stoppingToken);
             }
+        }
+
+        private static HttpClient CreateHttpClient()
+        {
+            var handler = new HttpClientHandler();
+            var cert = new X509Certificate2(Path.Combine("Certs/client2.pfx"), "1111");
+            handler.ClientCertificates.Add(cert);
+
+            // Create client
+            return new HttpClient(handler);
         }
     }
 }

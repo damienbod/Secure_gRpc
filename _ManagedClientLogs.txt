@@ -1,0 +1,213 @@
+2019-12-17 13:21:43.851 +01:00 [DBG] Hosting starting
+2019-12-17 13:21:43.922 +01:00 [INF] User profile is available. Using 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-12-17 13:21:43.938 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-2913a921-b76b-484a-b7ab-71a724d631b4.xml'.
+2019-12-17 13:21:43.965 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-47c0a577-e593-43fe-9765-e8ab250e5d56.xml'.
+2019-12-17 13:21:43.967 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-8ab7fbd2-3801-4cfe-bad9-6664e52bf649.xml'.
+2019-12-17 13:21:43.968 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-923c8f5a-fb66-4975-9526-15839cdd9a83.xml'.
+2019-12-17 13:21:43.968 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-9aeaf8ce-d747-4811-b97f-ad31fcdc0eba.xml'.
+2019-12-17 13:21:43.968 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-c0bf2a7a-62cc-4f72-9649-9953830a5c8f.xml'.
+2019-12-17 13:21:43.969 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-dd834f26-948c-4923-aad9-7bf23d14c60a.xml'.
+2019-12-17 13:21:43.969 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-dfb27239-debb-4eaa-b1ee-b52b2ed7d79f.xml'.
+2019-12-17 13:21:43.969 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-e2d13bb4-8ade-4932-abf1-6abfc696747c.xml'.
+2019-12-17 13:21:43.969 +01:00 [DBG] Reading data from file 'C:\Users\stduser\AppData\Local\ASP.NET\DataProtection-Keys\key-e6deaa91-2211-4af7-bf27-d8343d71ffde.xml'.
+2019-12-17 13:21:43.975 +01:00 [DBG] Found key {2913a921-b76b-484a-b7ab-71a724d631b4}.
+2019-12-17 13:21:43.980 +01:00 [DBG] Found key {47c0a577-e593-43fe-9765-e8ab250e5d56}.
+2019-12-17 13:21:43.980 +01:00 [DBG] Found key {8ab7fbd2-3801-4cfe-bad9-6664e52bf649}.
+2019-12-17 13:21:43.980 +01:00 [DBG] Found key {923c8f5a-fb66-4975-9526-15839cdd9a83}.
+2019-12-17 13:21:43.980 +01:00 [DBG] Found key {9aeaf8ce-d747-4811-b97f-ad31fcdc0eba}.
+2019-12-17 13:21:43.981 +01:00 [DBG] Found key {c0bf2a7a-62cc-4f72-9649-9953830a5c8f}.
+2019-12-17 13:21:43.981 +01:00 [DBG] Found key {dd834f26-948c-4923-aad9-7bf23d14c60a}.
+2019-12-17 13:21:43.981 +01:00 [DBG] Found key {dfb27239-debb-4eaa-b1ee-b52b2ed7d79f}.
+2019-12-17 13:21:43.981 +01:00 [DBG] Found key {e2d13bb4-8ade-4932-abf1-6abfc696747c}.
+2019-12-17 13:21:43.981 +01:00 [DBG] Found key {e6deaa91-2211-4af7-bf27-d8343d71ffde}.
+2019-12-17 13:21:43.991 +01:00 [DBG] Considering key {dd834f26-948c-4923-aad9-7bf23d14c60a} with expiration date 2020-03-04 09:52:07Z as default key.
+2019-12-17 13:21:44.024 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-12-17 13:21:44.027 +01:00 [DBG] Decrypting secret element using Windows DPAPI.
+2019-12-17 13:21:44.028 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-12-17 13:21:44.034 +01:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2019-12-17 13:21:44.037 +01:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2019-12-17 13:21:44.040 +01:00 [DBG] Using key {dd834f26-948c-4923-aad9-7bf23d14c60a} as the default key.
+2019-12-17 13:21:44.041 +01:00 [DBG] Key ring with default key {dd834f26-948c-4923-aad9-7bf23d14c60a} was loaded during application startup.
+2019-12-17 13:21:44.464 +01:00 [DBG] Loaded hosting startup assembly SecureGrpc.ManagedClient
+2019-12-17 13:21:44.474 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-12-17 13:21:44.474 +01:00 [INF] Hosting environment: Development
+2019-12-17 13:21:44.475 +01:00 [INF] Content root path: C:\git\damienbod\Secure_gRpc\SecureGrpc.ManagedClient
+2019-12-17 13:21:44.475 +01:00 [DBG] Hosting started
+2019-12-17 13:21:44.547 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44382/  
+2019-12-17 13:21:44.556 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2019-12-17 13:21:44.556 +01:00 [VRB] All hosts are allowed.
+2019-12-17 13:21:44.561 +01:00 [DBG] The request path / does not match a supported file type
+2019-12-17 13:21:44.574 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Index.cshtml'.
+2019-12-17 13:21:44.575 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Privacy.cshtml'.
+2019-12-17 13:21:44.575 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2019-12-17 13:21:44.575 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_CookieConsentPartial.cshtml'.
+2019-12-17 13:21:44.575 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2019-12-17 13:21:44.575 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ValidationScriptsPartial.cshtml'.
+2019-12-17 13:21:44.575 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2019-12-17 13:21:44.575 +01:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2019-12-17 13:21:44.597 +01:00 [DBG] 1 candidate(s) found for the request path '/'
+2019-12-17 13:21:44.602 +01:00 [DBG] Endpoint 'SecureGrpc.ManagedClient.Controllers.HomeController.Index (SecureGrpc.ManagedClient)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2019-12-17 13:21:44.602 +01:00 [DBG] Request matched endpoint 'SecureGrpc.ManagedClient.Controllers.HomeController.Index (SecureGrpc.ManagedClient)'
+2019-12-17 13:21:44.605 +01:00 [INF] Executing endpoint 'SecureGrpc.ManagedClient.Controllers.HomeController.Index (SecureGrpc.ManagedClient)'
+2019-12-17 13:21:44.622 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-12-17 13:21:44.717 +01:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SecureGrpc.ManagedClient.Controllers.HomeController (SecureGrpc.ManagedClient).
+2019-12-17 13:21:44.720 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2019-12-17 13:21:44.722 +01:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2019-12-17 13:21:44.722 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2019-12-17 13:21:44.722 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2019-12-17 13:21:44.722 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2019-12-17 13:21:44.723 +01:00 [VRB] Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:44.723 +01:00 [VRB] Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:44.724 +01:00 [DBG] Executing controller factory for controller SecureGrpc.ManagedClient.Controllers.HomeController (SecureGrpc.ManagedClient)
+2019-12-17 13:21:44.728 +01:00 [DBG] Executed controller factory for controller SecureGrpc.ManagedClient.Controllers.HomeController (SecureGrpc.ManagedClient)
+2019-12-17 13:21:44.728 +01:00 [VRB] Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter.
+2019-12-17 13:21:44.728 +01:00 [VRB] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-12-17 13:21:44.729 +01:00 [VRB] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-12-17 13:21:44.736 +01:00 [INF] Executing action method SecureGrpc.ManagedClient.Controllers.HomeController.Index (SecureGrpc.ManagedClient) - Validation state: "Valid"
+2019-12-17 13:21:44.781 +01:00 [DBG] GetApiToken new from STS for ProtectedGrpc
+2019-12-17 13:21:44.812 +01:00 [INF] Start processing HTTP request GET "https://localhost:44352/.well-known/openid-configuration"
+2019-12-17 13:21:44.813 +01:00 [VRB] Request Headers:
+Accept: application/json
+
+2019-12-17 13:21:44.815 +01:00 [INF] Sending HTTP request GET "https://localhost:44352/.well-known/openid-configuration"
+2019-12-17 13:21:44.816 +01:00 [VRB] Request Headers:
+Accept: application/json
+
+2019-12-17 13:21:46.002 +01:00 [INF] Received HTTP response after 1181.0273ms - "OK"
+2019-12-17 13:21:46.005 +01:00 [VRB] Response Headers:
+Transfer-Encoding: chunked
+Server: Microsoft-IIS/10.0
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data:;font-src 'self';frame-ancestors 'self';block-all-mixed-content
+X-SourceFiles: =?UTF-8?B?QzpcZ2l0XGRhbWllbmJvZFxTZWN1cmVfZ1JwY1xTZWN1cmVUb2tlblNlcnZpY2VcLndlbGwta25vd25cb3BlbmlkLWNvbmZpZ3VyYXRpb24=?=
+Date: Tue, 17 Dec 2019 12:21:45 GMT
+Content-Type: application/json; charset=UTF-8
+
+2019-12-17 13:21:46.006 +01:00 [INF] End processing HTTP request after 1195.4866ms - "OK"
+2019-12-17 13:21:46.006 +01:00 [VRB] Response Headers:
+Transfer-Encoding: chunked
+Server: Microsoft-IIS/10.0
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data:;font-src 'self';frame-ancestors 'self';block-all-mixed-content
+X-SourceFiles: =?UTF-8?B?QzpcZ2l0XGRhbWllbmJvZFxTZWN1cmVfZ1JwY1xTZWN1cmVUb2tlblNlcnZpY2VcLndlbGwta25vd25cb3BlbmlkLWNvbmZpZ3VyYXRpb24=?=
+Date: Tue, 17 Dec 2019 12:21:45 GMT
+Content-Type: application/json; charset=UTF-8
+
+2019-12-17 13:21:46.037 +01:00 [INF] Start processing HTTP request GET "https://localhost:44352/.well-known/openid-configuration/jwks"
+2019-12-17 13:21:46.037 +01:00 [VRB] Request Headers:
+Accept: application/json, application/jwk-set+json
+
+2019-12-17 13:21:46.038 +01:00 [INF] Sending HTTP request GET "https://localhost:44352/.well-known/openid-configuration/jwks"
+2019-12-17 13:21:46.038 +01:00 [VRB] Request Headers:
+Accept: application/json, application/jwk-set+json
+
+2019-12-17 13:21:46.213 +01:00 [INF] Received HTTP response after 174.7186ms - "OK"
+2019-12-17 13:21:46.217 +01:00 [VRB] Response Headers:
+Transfer-Encoding: chunked
+Server: Microsoft-IIS/10.0
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data:;font-src 'self';frame-ancestors 'self';block-all-mixed-content
+X-SourceFiles: =?UTF-8?B?QzpcZ2l0XGRhbWllbmJvZFxTZWN1cmVfZ1JwY1xTZWN1cmVUb2tlblNlcnZpY2VcLndlbGwta25vd25cb3BlbmlkLWNvbmZpZ3VyYXRpb25candrcw==?=
+Date: Tue, 17 Dec 2019 12:21:45 GMT
+Content-Type: application/jwk-set+json; charset=UTF-8
+
+2019-12-17 13:21:46.219 +01:00 [INF] End processing HTTP request after 181.3882ms - "OK"
+2019-12-17 13:21:46.221 +01:00 [VRB] Response Headers:
+Transfer-Encoding: chunked
+Server: Microsoft-IIS/10.0
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data:;font-src 'self';frame-ancestors 'self';block-all-mixed-content
+X-SourceFiles: =?UTF-8?B?QzpcZ2l0XGRhbWllbmJvZFxTZWN1cmVfZ1JwY1xTZWN1cmVUb2tlblNlcnZpY2VcLndlbGwta25vd25cb3BlbmlkLWNvbmZpZ3VyYXRpb25candrcw==?=
+Date: Tue, 17 Dec 2019 12:21:45 GMT
+Content-Type: application/jwk-set+json; charset=UTF-8
+
+2019-12-17 13:21:46.445 +01:00 [INF] Start processing HTTP request POST "https://localhost:44352/connect/token"
+2019-12-17 13:21:46.445 +01:00 [VRB] Request Headers:
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+2019-12-17 13:21:46.446 +01:00 [INF] Sending HTTP request POST "https://localhost:44352/connect/token"
+2019-12-17 13:21:46.446 +01:00 [VRB] Request Headers:
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+2019-12-17 13:21:46.674 +01:00 [INF] Received HTTP response after 228.6061ms - "OK"
+2019-12-17 13:21:46.676 +01:00 [VRB] Response Headers:
+Cache-Control: no-store, no-cache, max-age=0
+Pragma: no-cache
+Transfer-Encoding: chunked
+Server: Microsoft-IIS/10.0
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data:;font-src 'self';frame-ancestors 'self';block-all-mixed-content
+X-SourceFiles: =?UTF-8?B?QzpcZ2l0XGRhbWllbmJvZFxTZWN1cmVfZ1JwY1xTZWN1cmVUb2tlblNlcnZpY2VcY29ubmVjdFx0b2tlbg==?=
+Date: Tue, 17 Dec 2019 12:21:45 GMT
+Content-Type: application/json; charset=UTF-8
+
+2019-12-17 13:21:46.676 +01:00 [INF] End processing HTTP request after 231.366ms - "OK"
+2019-12-17 13:21:46.676 +01:00 [VRB] Response Headers:
+Cache-Control: no-store, no-cache, max-age=0
+Pragma: no-cache
+Transfer-Encoding: chunked
+Server: Microsoft-IIS/10.0
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data:;font-src 'self';frame-ancestors 'self';block-all-mixed-content
+X-SourceFiles: =?UTF-8?B?QzpcZ2l0XGRhbWllbmJvZFxTZWN1cmVfZ1JwY1xTZWN1cmVUb2tlblNlcnZpY2VcY29ubmVjdFx0b2tlbg==?=
+Date: Tue, 17 Dec 2019 12:21:45 GMT
+Content-Type: application/json; charset=UTF-8
+
+2019-12-17 13:21:53.076 +01:00 [INF] Executed action method SecureGrpc.ManagedClient.Controllers.HomeController.Index (SecureGrpc.ManagedClient), returned result Microsoft.AspNetCore.Mvc.ViewResult in 8335.6376ms.
+2019-12-17 13:21:53.077 +01:00 [VRB] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-12-17 13:21:53.077 +01:00 [VRB] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-12-17 13:21:53.079 +01:00 [VRB] Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter.
+2019-12-17 13:21:53.080 +01:00 [VRB] Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:53.080 +01:00 [VRB] Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:53.081 +01:00 [VRB] Before executing action result Microsoft.AspNetCore.Mvc.ViewResult.
+2019-12-17 13:21:53.084 +01:00 [DBG] View lookup cache miss for view 'Index' in controller 'Home'.
+2019-12-17 13:21:53.085 +01:00 [VRB] Located compiled view for view at path '/Views/Home/Index.cshtml'.
+2019-12-17 13:21:53.087 +01:00 [VRB] Could not find a file for view at path '/Views/Home/_ViewStart.cshtml'.
+2019-12-17 13:21:53.087 +01:00 [VRB] Located compiled view for view at path '/Views/_ViewStart.cshtml'.
+2019-12-17 13:21:53.088 +01:00 [VRB] Could not find a file for view at path '/_ViewStart.cshtml'.
+2019-12-17 13:21:53.092 +01:00 [INF] Executing ViewResult, running view Index.
+2019-12-17 13:21:53.095 +01:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 8.7283ms.
+2019-12-17 13:21:53.146 +01:00 [DBG] View lookup cache miss for view '_Layout' in controller 'Home'.
+2019-12-17 13:21:53.146 +01:00 [VRB] Could not find a file for view at path '/Views/Home/_Layout.cshtml'.
+2019-12-17 13:21:53.146 +01:00 [VRB] Located compiled view for view at path '/Views/Shared/_Layout.cshtml'.
+2019-12-17 13:21:53.190 +01:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2019-12-17 13:21:53.197 +01:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2019-12-17 13:21:53.207 +01:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2019-12-17 13:21:53.218 +01:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2019-12-17 13:21:53.218 +01:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2019-12-17 13:21:53.219 +01:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2019-12-17 13:21:53.219 +01:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2019-12-17 13:21:53.220 +01:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2019-12-17 13:21:53.220 +01:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2019-12-17 13:21:53.222 +01:00 [DBG] View lookup cache miss for view '_CookieConsentPartial' in controller 'Home'.
+2019-12-17 13:21:53.222 +01:00 [VRB] Could not find a file for view at path '/Views/Home/_CookieConsentPartial.cshtml'.
+2019-12-17 13:21:53.222 +01:00 [VRB] Located compiled view for view at path '/Views/Shared/_CookieConsentPartial.cshtml'.
+2019-12-17 13:21:53.231 +01:00 [VRB] Needs consent: true.
+2019-12-17 13:21:53.235 +01:00 [VRB] Has consent: true.
+2019-12-17 13:21:53.238 +01:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2019-12-17 13:21:53.238 +01:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2019-12-17 13:21:53.238 +01:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2019-12-17 13:21:53.259 +01:00 [INF] Executed ViewResult - view Index executed in 176.3302ms.
+2019-12-17 13:21:53.259 +01:00 [VRB] After executing action result Microsoft.AspNetCore.Mvc.ViewResult.
+2019-12-17 13:21:53.259 +01:00 [VRB] Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:53.260 +01:00 [VRB] Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:53.260 +01:00 [VRB] Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:53.261 +01:00 [VRB] Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2019-12-17 13:21:53.261 +01:00 [INF] Executed action SecureGrpc.ManagedClient.Controllers.HomeController.Index (SecureGrpc.ManagedClient) in 8538.8977ms
+2019-12-17 13:21:53.262 +01:00 [INF] Executed endpoint 'SecureGrpc.ManagedClient.Controllers.HomeController.Index (SecureGrpc.ManagedClient)'
+2019-12-17 13:21:53.267 +01:00 [INF] HTTP GET / responded 200 in 8705.0807 ms
+2019-12-17 13:21:53.274 +01:00 [INF] Request finished in 8731.7894ms 200 text/html; charset=utf-8
