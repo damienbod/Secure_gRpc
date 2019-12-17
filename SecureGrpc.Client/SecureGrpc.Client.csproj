@@ -24,28 +24,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Certs\ca.crt">
+    <None Update="Certs\ca2.crt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Certs\ca1.crt">
+    <None Update="Certs\ca2.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Certs\ca1.key">
+    <None Update="Certs\client2.crt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Certs\client.crt">
+    <None Update="Certs\client2.csr">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Certs\client.key">
+    <None Update="Certs\client2.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Certs\client1.crt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Certs\client1.csr">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Certs\client1.key">
+    <None Update="Certs\client2.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
