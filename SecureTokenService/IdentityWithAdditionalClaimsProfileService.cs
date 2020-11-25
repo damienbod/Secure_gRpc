@@ -44,19 +44,15 @@ namespace StsServerIdentity
                 claims.Add(new Claim(JwtClaimTypes.Role, "user"));
             }
 
-            if (user.DataEventRecordsRole == "dataEventRecords.admin")
+            if (user.TwoFactorEnabled)
             {
-                claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords.admin"));
-                claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords.user"));
-                claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords"));
-                claims.Add(new Claim(JwtClaimTypes.Scope, "dataEventRecords"));
+                claims.Add(new Claim("amr", "mfa"));
             }
             else
             {
-                claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords.user"));
-                claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords"));
-                claims.Add(new Claim(JwtClaimTypes.Scope, "dataEventRecords"));
+                claims.Add(new Claim("amr", "pwd")); ;
             }
+
             claims.Add(new Claim(IdentityServerConstants.StandardScopes.Email, user.Email));
 
             context.IssuedClaims = claims;
