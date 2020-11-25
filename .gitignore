@@ -13,3 +13,5 @@
 /SecureGrpc.Client/bin
 /SecureGrpc.ManagedClient/bin
 /SecureGrpc.ManagedClient/obj
+/_GrpcServerLogs.txt
+/_ManagedClientLogs.txt

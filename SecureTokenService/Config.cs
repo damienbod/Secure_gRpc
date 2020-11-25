@@ -10,6 +10,14 @@ namespace StsServerIdentity
 {
     public class Config
     {
+        public static IEnumerable<ApiScope> GetApiScopes()
+        {
+            return new List<ApiScope>
+            {
+                new ApiScope("grpc_protected_scope", "grpc_protected_scope")
+            };
+        }
+
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new List<IdentityResource>
@@ -32,14 +40,7 @@ namespace StsServerIdentity
                     {
                         new Secret("grpc_protected_secret".Sha256())
                     },
-                    Scopes =
-                    {
-                        new Scope
-                        {
-                            Name = "grpc_protected_scope",
-                            ShowInDiscoveryDocument = false
-                        }
-                    },
+                    Scopes = new List<string>{"grpc_protected_scope" },
                     UserClaims = { "role", "admin", "user", "safe_zone_api" }
                 }
             };
