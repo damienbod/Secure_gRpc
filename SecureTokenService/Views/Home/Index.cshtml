@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "StsServerIdentity Home";
 }
-@inject IOptions<AuthConfigurations> OptionsStsConfig
+@inject IOptions<StsConfig> OptionsStsConfig
 
 @if (User.Identity.IsAuthenticated)
 {
@@ -14,7 +14,7 @@ else
     <br />
 }
 
-
-<a href="@OptionsStsConfig.Value.HybridClientUrl">
-    Web Client
+<a href="@OptionsStsConfig.Value.ClientUrl">
+    ClientUrl
 </a>
+
