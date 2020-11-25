@@ -2,11 +2,11 @@
   "profiles": {
     "Secure_gRpc": {
       "commandName": "Project",
+	  "launchBrowser": true,
       "launchUrl": "https://localhost:50051",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "nativeDebugging": true,
       "applicationUrl": "https://localhost:50051"
     }
   }
